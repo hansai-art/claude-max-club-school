@@ -3,24 +3,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
-/* ===== Light mode (default) ===== */
+/* ===== 全域：無圓角 ===== */
+* { border-radius: 0 !important; }
+
+/* ===== Light mode ===== */
 :root {
-  --claude-orange: #d97757;
-  --claude-orange-dark: #c15f3c;
-  --claude-dark: #141413;
-  --claude-light: #faf9f5;
-  --claude-cream: #f4f3ee;
-  --claude-gray: #b0aea5;
-  --claude-gray-light: #e8e6dc;
-  --bg: var(--claude-light);
-  --bg-sidebar: var(--claude-cream);
-  --text: var(--claude-dark);
+  --bg: #faf9f5;
+  --bg-sidebar: #f4f3ee;
+  --text: #000;
+  --link: #c15f3c;
+  --link-hover: #a8502f;
+  --border: #e8e6dc;
   --code-bg: #1e1e1e;
   --code-text: #d4d4d4;
-  --inline-code-bg: var(--claude-cream);
-  --inline-code-text: var(--claude-dark);
-  --border: var(--claude-gray-light);
-  --table-header: var(--claude-cream);
+  --inline-code-bg: #f4f3ee;
 }
 
 /* ===== Dark mode ===== */
@@ -28,125 +24,109 @@
   --bg: #1a1a1a;
   --bg-sidebar: #222;
   --text: #e0ddd5;
+  --link: #e08860;
+  --link-hover: #f0a070;
+  --border: #3a3a3a;
   --code-bg: #0d0d0d;
   --code-text: #d4d4d4;
   --inline-code-bg: #2a2a2a;
-  --inline-code-text: #e0ddd5;
-  --border: #3a3a3a;
-  --table-header: #2a2a2a;
-  --claude-cream: #2a2a2a;
-  --claude-light: #1a1a1a;
-  --claude-dark: #e0ddd5;
-  --claude-gray-light: #3a3a3a;
-  --claude-orange-dark: #e08860;
 }
 
-/* ===== Typography ===== */
+/* ===== Font ===== */
 body, .site-title, .nav-list, .search-input {
   font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
-body { background-color: var(--bg) !important; color: var(--text) !important; }
+
+/* ===== Base ===== */
+body, .main-content, .main-content-wrap, .main, #top, .main-header {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
 .site-title { font-size: 1rem !important; white-space: nowrap; font-weight: 700; color: var(--text) !important; }
 
+/* ===== 所有文字：淺色黑字，深色淺字 ===== */
+h1, h2, h3, h4, p, li, td, th, strong, b,
+.fs-9, .fs-8, .fs-6, .fs-5, .fw-300 { color: var(--text) !important; }
+
 /* ===== Links ===== */
-a, .nav-list .nav-list-item a { color: var(--claude-orange-dark); }
-a:hover { color: var(--claude-orange); }
+a { color: var(--link) !important; }
+a:hover { color: var(--link-hover) !important; }
 
 /* ===== Sidebar ===== */
 .side-bar { background-color: var(--bg-sidebar) !important; border-right: 1px solid var(--border); }
+.nav-list .nav-list-item a { color: var(--text) !important; }
+.nav-list .nav-list-item a:hover { color: var(--link) !important; }
 .nav-list .nav-list-item.active > .nav-list-link {
-  color: var(--claude-orange-dark); font-weight: 700;
-  background-color: rgba(217, 119, 87, 0.08);
+  color: var(--link) !important; font-weight: 700;
+  background-color: transparent !important;
+  border-left: none !important;
 }
+.nav-list-expander { color: var(--text) !important; }
+[data-theme="dark"] .nav-list .nav-list-item a { color: #ccc !important; }
+[data-theme="dark"] .nav-list .nav-list-item.active > .nav-list-link { color: var(--link) !important; }
 
-/* ===== Buttons (high contrast) ===== */
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary.selected,
-a.btn-primary,
-a.btn-primary:hover {
-  background-color: var(--claude-orange-dark) !important;
+/* ===== Buttons ===== */
+.btn-primary, .btn-primary:hover, .btn-primary:active, a.btn-primary, a.btn-primary:hover {
+  background-color: var(--link) !important;
   background-image: none !important;
-  border-color: var(--claude-orange-dark) !important;
+  border-color: var(--link) !important;
   box-shadow: none !important;
   color: #fff !important;
-  border-radius: 8px;
   text-decoration: none !important;
   font-weight: 500;
 }
-.btn-primary:hover,
-a.btn-primary:hover {
-  background-color: #a8502f !important;
-  border-color: #a8502f !important;
+.btn-primary:hover, a.btn-primary:hover {
+  background-color: var(--link-hover) !important;
+  border-color: var(--link-hover) !important;
 }
 .btn, a.btn {
-  border-radius: 8px;
-  border: 2px solid var(--claude-orange-dark) !important;
-  background-color: #fff !important;
-  color: var(--claude-orange-dark) !important;
+  border: 2px solid var(--link) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: var(--link) !important;
   text-decoration: none !important;
   font-weight: 500;
 }
 .btn:hover, a.btn:hover {
-  background-color: var(--claude-orange-dark) !important;
-  color: #fff !important;
-}
-[data-theme="dark"] .btn, [data-theme="dark"] a.btn {
-  background-color: transparent !important;
-  color: var(--claude-orange) !important;
-  border-color: var(--claude-orange) !important;
-}
-[data-theme="dark"] .btn:hover, [data-theme="dark"] a.btn:hover {
-  background-color: var(--claude-orange) !important;
+  background-color: var(--link) !important;
   color: #fff !important;
 }
 
-/* ===== Search bar ===== */
-/* Header 背景統一 */
-.main-header {
-  padding-right: 0 !important;
-  background-color: var(--bg) !important;
-}
-.main, #top {
-  background-color: var(--bg) !important;
-}
-.search {
-  width: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-.search-input-wrap {
-  width: 100% !important;
-  margin: 0 !important;
-}
+/* ===== Search ===== */
+.main-header { padding-right: 0 !important; }
+.search { width: 100% !important; padding: 0 !important; margin: 0 !important; }
+.search-input-wrap { width: 100% !important; margin: 0 !important; }
 .search-input {
   width: 100% !important;
   box-sizing: border-box !important;
+  background-color: var(--bg-sidebar) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
 }
+.search-input:focus { border-color: var(--link) !important; box-shadow: none !important; }
 
-/* ===== Code blocks (FIX: text must be visible + padding) ===== */
+/* ===== Code ===== */
+/* inline code：淺底黑字 */
 code {
   background-color: var(--inline-code-bg) !important;
-  color: var(--inline-code-text) !important;
+  color: #000 !important;
   border: 1px solid var(--border);
-  border-radius: 3px;
   padding: 1px 4px;
   font-size: 0.85em;
 }
+[data-theme="dark"] code {
+  color: #e0ddd5 !important;
+}
 pre.highlight, .highlight pre, .highlight,
-.language-plaintext.highlighter-rouge,
 .highlighter-rouge {
   background-color: var(--code-bg) !important;
-  border-radius: 8px; border: none;
+  border: none;
   padding: 16px 20px !important;
   overflow-x: auto;
 }
-.highlighter-rouge .highlight {
-  padding: 0 !important;
-}
-pre.highlight code, .highlight pre code,
-pre code {
+.highlighter-rouge .highlight { padding: 0 !important; }
+pre.highlight code, .highlight pre code, pre code {
   background-color: transparent !important;
   color: var(--code-text) !important;
   border: none;
@@ -155,31 +135,19 @@ pre code {
   word-break: break-word;
 }
 
-/* ===== Tables：白底配黑字 ===== */
-th { background-color: var(--table-header) !important; border-color: var(--border) !important; font-weight: 700; color: #000 !important; }
-td { border-color: var(--border) !important; color: #000 !important; background-color: #fff !important; }
-tr:nth-child(even) td { background-color: var(--claude-cream) !important; }
-
-/* ===== Search ===== */
-.search-input {
-  background-color: var(--bg-sidebar) !important;
-  border: 1px solid var(--border); border-radius: 8px;
-  color: var(--text) !important;
-}
-.search-input:focus { border-color: var(--claude-orange); box-shadow: 0 0 0 2px rgba(217, 119, 87, 0.15); }
-
-/* ===== Main content ===== */
-.main-content { background-color: var(--bg) !important; color: var(--text) !important; }
-h1, h2, h3, h4 { color: var(--text) !important; }
-p, li, .fs-6, .fs-5, .fw-300 { color: var(--text) !important; }
+/* ===== Tables ===== */
+th { background-color: var(--bg-sidebar) !important; border-color: var(--border) !important; font-weight: 700; }
+td { border-color: var(--border) !important; background-color: var(--bg) !important; }
+[data-theme="dark"] th { background-color: #333 !important; }
+[data-theme="dark"] td { background-color: #2a2a2a !important; }
 
 /* ===== Footer ===== */
-.site-footer { border-top: 1px solid var(--border); color: var(--claude-gray); background-color: var(--bg-sidebar) !important; }
+.site-footer { border-top: 1px solid var(--border); color: #999; background-color: var(--bg-sidebar) !important; }
 
-/* ===== Theme toggle button ===== */
+/* ===== Theme toggle ===== */
 .theme-toggle {
   position: fixed; top: 12px; right: 16px; z-index: 99999;
-  width: 40px; height: 40px; border-radius: 50%;
+  width: 40px; height: 40px;
   background: #fff; color: #000;
   border: 2px solid #000;
   cursor: pointer; font-size: 20px;
@@ -187,62 +155,11 @@ p, li, .fs-6, .fs-5, .fw-300 { color: var(--text) !important; }
   box-shadow: none;
 }
 .theme-toggle:hover { background: #eee; }
-[data-theme="dark"] .theme-toggle {
-  background: #000; color: #fff;
-  border-color: #fff;
-}
+[data-theme="dark"] .theme-toggle { background: #000; color: #fff; border-color: #fff; }
 [data-theme="dark"] .theme-toggle:hover { background: #222; }
-
-/* ===== Dark mode overrides (must be last) ===== */
-[data-theme="dark"] body,
-[data-theme="dark"] .main-content,
-[data-theme="dark"] .main-content-wrap { background-color: #1a1a1a !important; color: #e0ddd5 !important; }
-
-[data-theme="dark"] .side-bar { background-color: #222 !important; }
-[data-theme="dark"] .site-title { color: #e0ddd5 !important; }
-/* Header：dark mode 全區域背景 */
-[data-theme="dark"] .main-header,
-[data-theme="dark"] .main,
-[data-theme="dark"] #top { background-color: #1a1a1a !important; border-bottom: 1px solid #3a3a3a; }
-
-/* Dark nav links */
-[data-theme="dark"] .nav-list .nav-list-item a,
-[data-theme="dark"] .nav-list .nav-list-item .nav-list-link { color: #ccc !important; }
-[data-theme="dark"] .nav-list .nav-list-item.active > .nav-list-link { color: #e08860 !important; background-color: rgba(224, 136, 96, 0.1) !important; }
-[data-theme="dark"] .nav-list .nav-list-item a:hover { color: #e08860 !important; }
-
-/* Dark nav expander */
-[data-theme="dark"] .nav-list-expander { color: #999 !important; }
-
-/* Dark headings and text */
-[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4 { color: #e0ddd5 !important; }
-[data-theme="dark"] p, [data-theme="dark"] li, [data-theme="dark"] td, [data-theme="dark"] th { color: #ccc !important; }
-[data-theme="dark"] strong, [data-theme="dark"] b { color: #e0ddd5 !important; }
-[data-theme="dark"] .fs-9, [data-theme="dark"] .fs-8, [data-theme="dark"] .fs-6, [data-theme="dark"] .fs-5, [data-theme="dark"] .fw-300 { color: #e0ddd5 !important; }
-
-/* Dark table：白底行配黑字 */
-[data-theme="dark"] .table-wrapper table { background-color: #2a2a2a !important; }
-[data-theme="dark"] th { background-color: #333 !important; color: #e0ddd5 !important; }
-[data-theme="dark"] td { background-color: #2a2a2a !important; color: #ccc !important; }
-[data-theme="dark"] tr:nth-child(even) td { background-color: #252525 !important; }
-
-/* Dark links */
-[data-theme="dark"] a { color: #e08860 !important; }
-[data-theme="dark"] a:hover { color: #f0a070 !important; }
-
-/* Dark search */
-[data-theme="dark"] .search-input { background-color: #2a2a2a !important; color: #e0ddd5 !important; border-color: #444 !important; }
-
-/* Dark footer */
-[data-theme="dark"] .site-footer { background-color: #222 !important; border-color: #3a3a3a !important; color: #888 !important; }
-[data-theme="dark"] .site-footer a { color: #e08860 !important; }
-
-/* Kill active nav left border in both modes */
-.nav-list .nav-list-item.active > .nav-list-link { border-left: none !important; }
 </style>
 
 <script>
-// Apply saved theme immediately (before paint)
 (function() {
   var saved = localStorage.getItem('theme') || 'light';
   document.documentElement.setAttribute('data-theme', saved);
