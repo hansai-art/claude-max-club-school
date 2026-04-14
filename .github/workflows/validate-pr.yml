@@ -1,0 +1,71 @@
+name: Validate PR
+
+on:
+  pull_request:
+    paths:
+      - 'contributors/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check contributor folder structure
+        run: |
+          echo "Checking PR files..."
+          ERRORS=0
+
+          # Get list of changed files in contributors/
+          CHANGED=$(git diff --name-only ${{ github.event.pull_request.base.sha }}..HEAD -- contributors/ || true)
+
+          if [ -z "$CHANGED" ]; then
+            echo "No contributor files changed."
+            exit 0
+          fi
+
+          # Extract unique contributor folders (skip _template)
+          FOLDERS=$(echo "$CHANGED" | grep -oP 'contributors/[^/]+' | sort -u | grep -v '_template' || true)
+
+          for FOLDER in $FOLDERS; do
+            USERNAME=$(basename "$FOLDER")
+            echo "Checking contributor: $USERNAME"
+
+            # Must have index.md
+            if [ ! -f "$FOLDER/index.md" ]; then
+              echo "::error::$FOLDER/index.md is missing. Every contributor needs an index.md with their intro."
+              ERRORS=$((ERRORS + 1))
+            fi
+
+            # Check each lesson file has required frontmatter
+            for FILE in "$FOLDER"/*.md; do
+              [ "$FILE" = "$FOLDER/index.md" ] && continue
+              [ ! -f "$FILE" ] && continue
+
+              # Check for required frontmatter fields
+              if ! grep -q "^title:" "$FILE"; then
+                echo "::error::$FILE is missing 'title' in frontmatter"
+                ERRORS=$((ERRORS + 1))
+              fi
+              if ! grep -q "^parent:" "$FILE"; then
+                echo "::error::$FILE is missing 'parent' in frontmatter"
+                ERRORS=$((ERRORS + 1))
+              fi
+              if ! grep -q "grand_parent:" "$FILE"; then
+                echo "::error::$FILE is missing 'grand_parent' in frontmatter"
+                ERRORS=$((ERRORS + 1))
+              fi
+
+              # Check for "可複用的 CLAUDE.md 規則" section
+              if ! grep -qi "CLAUDE.md" "$FILE"; then
+                echo "::warning::$FILE might be missing a 'CLAUDE.md 規則' section. Every lesson should include reusable rules."
+              fi
+            done
+          done
+
+          if [ $ERRORS -gt 0 ]; then
+            echo "::error::Found $ERRORS error(s). Please fix them before merging."
+            exit 1
+          fi
+
+          echo "All checks passed!"

@@ -74,4 +74,4 @@ Claude MAX 俱樂部學校做的事情很簡單：
 
 ---
 
-> **A Community Project by Taiwan Claude MAX Users** — We share our Claude Code mistakes and lessons learned, so everyone's Claude gets smarter together. [Start contributing]({% link getting-started.md %}).
+> **A Community Project by Taiwan Claude MAX Users** — We share our Claude Code mistakes and lessons learned, so everyone's Claude gets smarter together. Articles are primarily in Traditional Chinese, but English contributions are welcome. [Start contributing]({% link getting-started.md %}).

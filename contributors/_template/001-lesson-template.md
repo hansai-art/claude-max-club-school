@@ -3,7 +3,7 @@ layout: default
 title: "經驗標題（描述 Claude 犯了什麼錯）"
 parent: 你的GitHub帳號
 grand_parent: 貢獻者
-tags: [常見錯誤]              # 可選：常見錯誤 / Debug心得 / 工作流程 / 提示技巧 / 自動化
+tags: [診斷不足, CLAUDE.md規則] # 從 TAGS.md 的固定清單中選擇，不要自創
 date: 2026-01-01              # 發現這個問題的大概日期
 still_relevant: true          # 如果 Claude 已經修好這個問題，改成 false
 ---
