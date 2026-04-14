@@ -24,7 +24,7 @@ permalink: /snippets/safety/
 
 ## 覆蓋保護
 
-來源：[hanslin/005]({% link contributors/hanslin/005-no-overwrite-remote.md %})、[hanslin/006]({% link contributors/hanslin/006-version-increment.md %})
+來源：[hanslin/005]({{ site.baseurl }}{% link contributors/hanslin/005-no-overwrite-remote.md %})、[hanslin/006]({{ site.baseurl }}{% link contributors/hanslin/006-version-increment.md %})
 
 ```markdown
 - 修改已發布的內容前，MUST 先從 API 拉取最新版本
@@ -37,7 +37,7 @@ permalink: /snippets/safety/
 
 ## 驗證流程
 
-來源：[hanslin/004]({% link contributors/hanslin/004-verify-before-done.md %})、[hanslin/007]({% link contributors/hanslin/007-publish-verify-checklist.md %})
+來源：[hanslin/004]({{ site.baseurl }}{% link contributors/hanslin/004-verify-before-done.md %})、[hanslin/007]({{ site.baseurl }}{% link contributors/hanslin/007-publish-verify-checklist.md %})
 
 ```markdown
 - CSS/HTML 變更後，MUST fetch 頁面確認關鍵元素存在且可見
@@ -49,7 +49,7 @@ permalink: /snippets/safety/
 
 ## 資料庫操作
 
-來源：[hanslin/008]({% link contributors/hanslin/008-no-manual-sql.md %})
+來源：[hanslin/008]({{ site.baseurl }}{% link contributors/hanslin/008-no-manual-sql.md %})
 
 ```markdown
 - NEVER 叫使用者去 Dashboard 執行 SQL
@@ -61,7 +61,7 @@ permalink: /snippets/safety/
 
 ## 自動化腳本
 
-來源：[hanslin/003]({% link contributors/hanslin/003-automation-debug.md %})
+來源：[hanslin/003]({{ site.baseurl }}{% link contributors/hanslin/003-automation-debug.md %})
 
 ```markdown
 - 偵測失敗時 MUST 先記錄實際狀態到 log，再決定是否重試

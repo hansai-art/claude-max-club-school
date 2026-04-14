@@ -18,8 +18,8 @@ description: "Claude Code 使用者的實戰經驗按主題分類：常見錯誤
 
 | 主題 | 說明 | 經驗數 |
 |:-----|:-----|:------|
-| [常見錯誤]({% link lessons/common-mistakes.md %}) | Claude Code 最常犯的錯，幾乎每個人都會遇到 | 3 |
-| [CLAUDE.md 規則集]({% link lessons/claude-md-rules.md %}) | 經過實戰驗證的 CLAUDE.md 規則整理 | 3 |
+| [常見錯誤]({{ site.baseurl }}{% link lessons/common-mistakes.md %}) | Claude Code 最常犯的錯，幾乎每個人都會遇到 | 3 |
+| [CLAUDE.md 規則集]({{ site.baseurl }}{% link lessons/claude-md-rules.md %}) | 經過實戰驗證的 CLAUDE.md 規則整理 | 3 |
 
 ---
 

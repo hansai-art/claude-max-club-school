@@ -79,7 +79,7 @@ permalink: /starter-pack/
 - 回答完就停，不加「還需要什麼嗎？」
 ```
 
-各規則的詳細說明和來源在[效率規則]({% link snippets/efficiency.md %})和[安全規則]({% link snippets/safety.md %})。
+各規則的詳細說明和來源在[效率規則]({{ site.baseurl }}{% link snippets/efficiency.md %})和[安全規則]({{ site.baseurl }}{% link snippets/safety.md %})。
 
 ---
 

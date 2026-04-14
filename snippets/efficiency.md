@@ -14,7 +14,7 @@ permalink: /snippets/efficiency/
 
 ## 工具使用優先順序
 
-來源：[hanslin/001]({% link contributors/hanslin/001-edit-not-write.md %})
+來源：[hanslin/001]({{ site.baseurl }}{% link contributors/hanslin/001-edit-not-write.md %})
 
 ```markdown
 - Prefer Edit over Write for existing files：只送 diff，不重寫整檔
@@ -29,7 +29,7 @@ permalink: /snippets/efficiency/
 
 ## 診斷優先
 
-來源：[hanslin/002]({% link contributors/hanslin/002-diagnose-first.md %})
+來源：[hanslin/002]({{ site.baseurl }}{% link contributors/hanslin/002-diagnose-first.md %})
 
 ```markdown
 - MUST 先列 2-3 個可能原因，讀 code 確認根本原因，才動手修
@@ -41,7 +41,7 @@ permalink: /snippets/efficiency/
 
 ## 平行操作
 
-來源：[hanslin/009]({% link contributors/hanslin/009-parallel-tool-calls.md %})
+來源：[hanslin/009]({{ site.baseurl }}{% link contributors/hanslin/009-parallel-tool-calls.md %})
 
 ```markdown
 - 需要讀多個檔案時，一次送多個 Read，不要分多輪
@@ -54,7 +54,7 @@ permalink: /snippets/efficiency/
 
 ## 精準讀取
 
-來源：[hanslin/010]({% link contributors/hanslin/010-read-only-what-you-need.md %})
+來源：[hanslin/010]({{ site.baseurl }}{% link contributors/hanslin/010-read-only-what-you-need.md %})
 
 ```markdown
 - 大檔案（>100 行）不要整個讀進來

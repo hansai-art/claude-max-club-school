@@ -17,8 +17,8 @@ has_children: true
 
 | 貢獻者 | 經驗數 | 主要領域 |
 |:-------|:------|:---------|
-| [hanslin]({% link contributors/hanslin/index.md %}) | 10 | WordPress、Token 效率、覆蓋風險、自動化、驗證流程 |
+| [hanslin]({{ site.baseurl }}{% link contributors/hanslin/index.md %}) | 10 | WordPress、Token 效率、覆蓋風險、自動化、驗證流程 |
 
 ---
 
-**想加入嗎？** 看 [開始貢獻]({% link getting-started.md %}) 只要三步。
+**想加入嗎？** 看 [開始貢獻]({{ site.baseurl }}{% link getting-started.md %}) 只要三步。
