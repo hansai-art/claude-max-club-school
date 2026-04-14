@@ -12,7 +12,7 @@ permalink: /lessons/claude-md-rules/
 
 ---
 
-**想一次裝完？** 用[新手懶人包]({{ site.baseurl }}{% link starter-pack.md %})。
+**想一次裝完？** 用[新手懶人包]({{ site.baseurl }}{% link pages/starter-pack.md %})。
 
 **想挑著裝？** 去[片段庫]({{ site.baseurl }}{% link snippets/index.md %})複製你需要的。
 

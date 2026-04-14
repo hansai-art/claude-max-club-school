@@ -21,4 +21,4 @@ has_children: true
 
 ---
 
-**想加入嗎？** 看 [開始貢獻]({{ site.baseurl }}{% link getting-started.md %}) 只要三步。
+**想加入嗎？** 看 [開始貢獻]({{ site.baseurl }}{% link pages/getting-started.md %}) 只要三步。

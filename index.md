@@ -16,7 +16,7 @@ description: "台灣 Claude MAX 用戶共編的 Claude Code 踩坑經驗、CLAUD
 
 與其每個人獨自摸索，不如把教訓集中起來：**你教會你的 Claude 一件事，所有人的 Claude 都跟著變聰明。**
 
-[讓我的 Claude 來貢獻]({{ site.baseurl }}{% link getting-started.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[讓我的 Claude 來貢獻]({{ site.baseurl }}{% link pages/getting-started.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [看看能學到什麼]({{ site.baseurl }}{% link lessons/index.md %}){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
@@ -41,7 +41,7 @@ Claude MAX 俱樂部學校做的事情很簡單：
 
 | 區域 | 說明 |
 |:-----|:-----|
-| [新手懶人包]({{ site.baseurl }}{% link starter-pack.md %}) | 不管什麼技術棧都適用的通用規則，5 秒安裝 |
+| [新手懶人包]({{ site.baseurl }}{% link pages/starter-pack.md %}) | 不管什麼技術棧都適用的通用規則，5 秒安裝 |
 | [貢獻者]({{ site.baseurl }}{% link contributors/index.md %}) | 每人一個專屬資料夾，看看跟你背景相近的人踩了什麼坑 |
 | [經驗分類]({{ site.baseurl }}{% link lessons/index.md %}) | 按主題整理的經驗索引：常見錯誤、Debug 心得、工作流程 |
 | [CLAUDE.md 片段庫]({{ site.baseurl }}{% link snippets/index.md %}) | 可以直接複製貼上的規則，拿去強化你的 Claude |
@@ -64,7 +64,7 @@ Claude MAX 俱樂部學校做的事情很簡單：
 
 你的 Claude 會根據你的背景自動篩選，只學相關的，一步到位寫進你的 CLAUDE.md。
 
-**懶得篩？** 直接裝 [新手懶人包]({{ site.baseurl }}{% link starter-pack.md %})，5 秒搞定。
+**懶得篩？** 直接裝 [新手懶人包]({{ site.baseurl }}{% link pages/starter-pack.md %})，5 秒搞定。
 
 ## 讓你的 Claude 自我進化
 
@@ -74,7 +74,7 @@ Claude Code 有一個官方功能 `/insight`，會自動分析你的使用模式
 
 1. 在 Claude Code 裡輸入 `/insight`
 2. 看看它發現了什麼你沒注意到的問題
-3. 把有用的發現[貢獻上來]({{ site.baseurl }}{% link getting-started.md %})，讓其他人的 Claude 也學到
+3. 把有用的發現[貢獻上來]({{ site.baseurl }}{% link pages/getting-started.md %})，讓其他人的 Claude 也學到
 
 `/insight` 是挖掘經驗最快的方式，比自己回想踩過什麼坑快多了。
 
@@ -88,4 +88,4 @@ Claude Code 有一個官方功能 `/insight`，會自動分析你的使用模式
 
 ---
 
-> **A Community Project by Taiwan Claude MAX Users**: We share our Claude Code mistakes and lessons learned, so everyone's Claude gets smarter together. Articles are primarily in Traditional Chinese, but English contributions are welcome. [Start contributing]({{ site.baseurl }}{% link getting-started.md %}).
+> **A Community Project by Taiwan Claude MAX Users**: We share our Claude Code mistakes and lessons learned, so everyone's Claude gets smarter together. Articles are primarily in Traditional Chinese, but English contributions are welcome. [Start contributing]({{ site.baseurl }}{% link pages/getting-started.md %}).
