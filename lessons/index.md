@@ -3,6 +3,7 @@ layout: default
 title: 經驗分類
 nav_order: 6
 has_children: true
+description: "Claude Code 使用者的實戰經驗按主題分類：常見錯誤、CLAUDE.md 規則集、Debug 心得、工作流程。"
 ---
 
 # 經驗分類
