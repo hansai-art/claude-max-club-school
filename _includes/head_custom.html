@@ -115,15 +115,16 @@ a:hover { color: var(--link-hover) !important; }
 .search-input:focus { border-color: var(--link) !important; box-shadow: none !important; }
 
 /* ===== Code ===== */
-/* inline code：淺底黑字 */
+/* inline code：淺色模式=淺灰底黑字，深色模式=深灰底白字 */
 code {
-  background-color: var(--inline-code-bg) !important;
+  background-color: #eee !important;
   color: #000 !important;
-  border: 1px solid var(--border);
-  padding: 1px 4px;
+  border: none !important;
+  padding: 1px 3px;
   font-size: 0.85em;
 }
 [data-theme="dark"] code {
+  background-color: #333 !important;
   color: #e0ddd5 !important;
 }
 pre.highlight, .highlight pre, .highlight,
