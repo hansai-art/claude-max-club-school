@@ -154,9 +154,10 @@ pre code {
   word-break: break-word;
 }
 
-/* ===== Tables ===== */
-th { background-color: var(--table-header) !important; border-color: var(--border) !important; font-weight: 700; color: var(--text) !important; }
-td { border-color: var(--border) !important; color: var(--text) !important; }
+/* ===== Tables：白底配黑字 ===== */
+th { background-color: var(--table-header) !important; border-color: var(--border) !important; font-weight: 700; color: #000 !important; }
+td { border-color: var(--border) !important; color: #000 !important; background-color: #fff !important; }
+tr:nth-child(even) td { background-color: var(--claude-cream) !important; }
 
 /* ===== Search ===== */
 .search-input {
@@ -217,6 +218,12 @@ p, li, .fs-6, .fs-5, .fw-300 { color: var(--text) !important; }
 [data-theme="dark"] p, [data-theme="dark"] li, [data-theme="dark"] td, [data-theme="dark"] th { color: #ccc !important; }
 [data-theme="dark"] strong, [data-theme="dark"] b { color: #e0ddd5 !important; }
 [data-theme="dark"] .fs-9, [data-theme="dark"] .fs-8, [data-theme="dark"] .fs-6, [data-theme="dark"] .fs-5, [data-theme="dark"] .fw-300 { color: #e0ddd5 !important; }
+
+/* Dark table：白底行配黑字 */
+[data-theme="dark"] .table-wrapper table { background-color: #2a2a2a !important; }
+[data-theme="dark"] th { background-color: #333 !important; color: #e0ddd5 !important; }
+[data-theme="dark"] td { background-color: #2a2a2a !important; color: #ccc !important; }
+[data-theme="dark"] tr:nth-child(even) td { background-color: #252525 !important; }
 
 /* Dark links */
 [data-theme="dark"] a { color: #e08860 !important; }
