@@ -163,17 +163,18 @@ p, li, .fs-6, .fs-5, .fw-300 { color: var(--text) !important; }
 /* ===== Footer ===== */
 .site-footer { border-top: 1px solid var(--border); color: var(--claude-gray); background-color: var(--bg-sidebar) !important; }
 
-/* ===== Theme toggle button (top-right) ===== */
+/* ===== Theme toggle button ===== */
 .theme-toggle {
-  position: fixed; top: 8px; right: 20px; z-index: 9999;
-  width: 36px; height: 36px; border-radius: 50%;
-  background: var(--claude-orange); color: #fff;
-  border: none; cursor: pointer; font-size: 18px;
+  position: fixed; top: 12px; right: 16px; z-index: 99999;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--claude-orange-dark); color: #fff;
+  border: 2px solid #fff;
+  cursor: pointer; font-size: 20px;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   transition: background 0.2s;
 }
-.theme-toggle:hover { background: var(--claude-orange-dark); }
+.theme-toggle:hover { background: #a8502f; }
 </style>
 
 <script>
