@@ -43,3 +43,12 @@ has_children: true
 - [圓角在深色模式露出白邊]({{ site.baseurl }}{% link contributors/hanslin/016-border-radius-leak.md %})：直接不用圓角
 - [jekyll-build-pages 不編譯本地 _sass]({{ site.baseurl }}{% link contributors/hanslin/017-scss-import-fail.md %})：CSS 放 head_custom.html
 - [CSS 疊 patch 不診斷根因]({{ site.baseurl }}{% link contributors/hanslin/018-css-patch-stacking.md %})：改兩次沒修好就 STOP 重診斷
+
+### 規則遵守與專案管理
+- [明確禁止的符號還是一直用]({{ site.baseurl }}{% link contributors/hanslin/019-em-dash-habit.md %})：CLAUDE.md 的 NEVER 是硬規則
+- [同樣內容寫了三份]({{ site.baseurl }}{% link contributors/hanslin/020-dry-violation.md %})：任何內容只能有一個 canonical 來源
+- [用了不存在的 include 檔名]({{ site.baseurl }}{% link contributors/hanslin/021-wrong-include-name.md %})：先查文件再用
+- [給 fixed 元素留 padding]({{ site.baseurl }}{% link contributors/hanslin/022-fixed-element-padding.md %})：fixed 不佔文檔流空間
+- [內容專案用了程式碼授權]({{ site.baseurl }}{% link contributors/hanslin/023-wrong-license.md %})：內容用 CC BY-SA，不是 MIT
+- [基本配置檔都忘了建]({{ site.baseurl }}{% link contributors/hanslin/024-missing-gitignore.md %})：.gitignore 和版本固定是第一步
+- [不了解平台限制就加設定]({{ site.baseurl }}{% link contributors/hanslin/025-permalink-pretty-fail.md %})：先確認版本再動手

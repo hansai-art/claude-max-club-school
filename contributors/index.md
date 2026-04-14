@@ -17,7 +17,7 @@ has_children: true
 
 | 貢獻者 | 經驗數 | 主要領域 |
 |:-------|:------|:---------|
-| [hanslin]({{ site.baseurl }}{% link contributors/hanslin/index.md %}) | 18 | Token 效率、診斷驗證、覆蓋風險、CSS/Jekyll 前端、自動化 |
+| [hanslin]({{ site.baseurl }}{% link contributors/hanslin/index.md %}) | 25 | Token 效率、診斷驗證、覆蓋風險、CSS/Jekyll 前端、自動化、專案管理 |
 
 ---
 
