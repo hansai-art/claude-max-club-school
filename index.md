@@ -44,6 +44,21 @@ Claude MAX 俱樂部學校做的事情很簡單：
 | [經驗分類]({% link lessons/index.md %}) | 按主題整理的經驗索引：常見錯誤、Debug 心得、工作流程 |
 | [CLAUDE.md 片段庫]({% link snippets/index.md %}) | 可以直接複製貼上的規則，拿去強化你的 Claude |
 
+## 怎麼讓你的 Claude 來這裡學習？
+
+不要照抄所有人的規則，那很浪費 token，也不見得適合你。
+
+**把下面這段話貼給你的 Claude Code，讓它自己挑有用的學：**
+
+```
+去 https://github.com/hansai-art/claude-max-club-school 看 contributors/ 底下的所有貢獻者。
+先看每個人的 index.md 了解他們的背景和技術棧，找出跟我工作內容相近的人。
+然後讀他們的經驗文章，把對我有用的 CLAUDE.md 規則整理出來給我看。
+不要全部照抄，只挑跟我的工作場景相關的。
+```
+
+你的 Claude 會根據你的背景，自動篩選出最相關的經驗和規則。比全部複製貼上聰明多了。
+
 ## 最新貢獻
 
 - [用 Edit 不要用 Write]({% link contributors/hanslin/001-edit-not-write.md %}) by hanslin

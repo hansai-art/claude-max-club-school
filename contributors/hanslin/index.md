@@ -9,10 +9,12 @@ has_children: true
 
 ## 關於我
 
-- **用 Claude Code 多久了**：超過 10 個月，日均使用
-- **主要用來做什麼**：WordPress 網站管理（techhanlin.tw）、Lovable + Supabase 全端開發、SEO 文章撰寫、自動化腳本
+- **身份**：獨立開發者 / 技術內容創作者
+- **工作內容**：經營科技翰林院（techhanlin.tw）技術部落格、開發 iPAS 備考工具
+- **技術棧**：WordPress、Lovable + Supabase、Astro、React + TypeScript
+- **用 Claude Code 做什麼**：WordPress 文章撰寫與管理、全端開發、自動化腳本（Zoom 排程、部署流程）、SEO 優化
 - **使用的 Claude 方案**：Claude MAX
-- **踩過最深的坑**：Claude 用本地舊檔案覆蓋了我在 WordPress 後台手動編輯的文章，所有修改全部消失
+- **用了多久**：超過 10 個月，日均使用
 
 ## 我的經驗文章
 
