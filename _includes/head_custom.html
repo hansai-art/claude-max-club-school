@@ -138,15 +138,25 @@ pre.highlight code, .highlight pre code, pre code {
 /* ===== Tables：白底黑字，無例外 ===== */
 .main-content table th,
 .main-content table td,
+.main-content .table-wrapper th,
+.main-content .table-wrapper td,
+.table-wrapper th,
+.table-wrapper td,
 table th, table td,
 th, td {
   color: #000 !important;
   border-color: var(--border) !important;
 }
-th { background-color: var(--bg-sidebar) !important; font-weight: 700; }
-td { background-color: #fff !important; }
-[data-theme="dark"] th, [data-theme="dark"] .main-content table th { background-color: #333 !important; color: #e0ddd5 !important; }
-[data-theme="dark"] td, [data-theme="dark"] .main-content table td { background-color: #2a2a2a !important; color: #ccc !important; }
+.main-content table th, .table-wrapper th,
+th { background-color: var(--bg-sidebar) !important; font-weight: 700; color: #000 !important; }
+.main-content table td, .table-wrapper td,
+td { background-color: #fff !important; color: #000 !important; }
+[data-theme="dark"] .main-content table th,
+[data-theme="dark"] .table-wrapper th,
+[data-theme="dark"] th { background-color: #333 !important; color: #e0ddd5 !important; }
+[data-theme="dark"] .main-content table td,
+[data-theme="dark"] .table-wrapper td,
+[data-theme="dark"] td { background-color: #2a2a2a !important; color: #ccc !important; }
 
 /* ===== Footer ===== */
 .site-footer { border-top: 1px solid var(--border); color: #999; background-color: var(--bg-sidebar) !important; }
