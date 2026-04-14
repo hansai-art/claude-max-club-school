@@ -135,11 +135,18 @@ pre.highlight code, .highlight pre code, pre code {
   word-break: break-word;
 }
 
-/* ===== Tables ===== */
-th { background-color: var(--bg-sidebar) !important; border-color: var(--border) !important; font-weight: 700; }
-td { border-color: var(--border) !important; background-color: var(--bg) !important; }
-[data-theme="dark"] th { background-color: #333 !important; }
-[data-theme="dark"] td { background-color: #2a2a2a !important; }
+/* ===== Tables：白底黑字，無例外 ===== */
+.main-content table th,
+.main-content table td,
+table th, table td,
+th, td {
+  color: #000 !important;
+  border-color: var(--border) !important;
+}
+th { background-color: var(--bg-sidebar) !important; font-weight: 700; }
+td { background-color: #fff !important; }
+[data-theme="dark"] th, [data-theme="dark"] .main-content table th { background-color: #333 !important; color: #e0ddd5 !important; }
+[data-theme="dark"] td, [data-theme="dark"] .main-content table td { background-color: #2a2a2a !important; color: #ccc !important; }
 
 /* ===== Footer ===== */
 .site-footer { border-top: 1px solid var(--border); color: #999; background-color: var(--bg-sidebar) !important; }
