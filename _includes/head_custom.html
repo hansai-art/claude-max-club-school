@@ -174,14 +174,14 @@ td { background-color: #fff !important; color: #000 !important; }
   position: fixed; top: 12px; right: 16px; z-index: 99999;
   width: 40px; height: 40px;
   background: #fff; color: #000;
-  border: 2px solid #000;
+  border: 0 !important; border-width: 0 !important; outline: none;
   cursor: pointer; font-size: 20px;
   display: flex; align-items: center; justify-content: center;
   box-shadow: none;
 }
 .theme-toggle:hover { background: #eee; }
-[data-theme="dark"] .theme-toggle { background: #000; color: #fff; border-color: #fff; }
-[data-theme="dark"] .theme-toggle:hover { background: #222; }
+[data-theme="dark"] .theme-toggle { background: #333; color: #fff; }
+[data-theme="dark"] .theme-toggle:hover { background: #444; }
 </style>
 
 <script>
