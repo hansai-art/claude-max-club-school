@@ -58,22 +58,29 @@ a:hover { color: var(--claude-orange); }
   background-color: rgba(217, 119, 87, 0.08);
 }
 
-/* ===== Buttons (override purple defaults) ===== */
+/* ===== Buttons (kill purple gradient) ===== */
 .btn-primary,
-a.btn-primary {
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.selected,
+a.btn-primary,
+a.btn-primary:hover {
   background-color: var(--claude-orange) !important;
+  background-image: none !important;
   border-color: var(--claude-orange) !important;
-  color: #fff !important; border-radius: 8px;
+  box-shadow: none !important;
+  color: #fff !important;
+  border-radius: 8px;
   text-decoration: none !important;
 }
 .btn-primary:hover,
 a.btn-primary:hover {
   background-color: var(--claude-orange-dark) !important;
   border-color: var(--claude-orange-dark) !important;
-  color: #fff !important;
 }
 .btn, a.btn {
-  border-radius: 8px; border-color: var(--border);
+  border-radius: 8px;
+  border-color: var(--border);
   color: var(--claude-orange-dark) !important;
   text-decoration: none !important;
 }
