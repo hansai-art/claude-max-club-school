@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 新手懶人包 — Claude Code CLAUDE.md 通用規則
+title: 新手懶人包：Claude Code CLAUDE.md 通用規則
 nav_order: 3
 description: "不管什麼技術棧都適用的 CLAUDE.md 規則懶人包。一鍵安裝，讓你的 Claude Code 立刻變聰明。社群驗證、持續更新。"
 permalink: /starter-pack/
@@ -33,7 +33,7 @@ permalink: /starter-pack/
 ```markdown
 ## 工具使用
 
-- Prefer Edit over Write for existing files — 只送 diff，不重寫整檔
+- Prefer Edit over Write for existing files：只送 diff，不重寫整檔
 - 能用 Read 就不用 cat/head/tail
 - 能用 Edit 就不用 sed/awk
 - 能用 Grep 就不用 grep/rg

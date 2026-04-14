@@ -33,7 +33,7 @@ still_relevant: true          # 如果 Claude 已經修好這個問題，改成 
 把這段貼進你的 CLAUDE.md：
 
 ```markdown
-- Prefer Edit over Write for existing files — 只送 diff，不重寫整檔。
+- Prefer Edit over Write for existing files：只送 diff，不重寫整檔。
 ```
 
 <!-- 這是最有價值的部分！讓別人可以直接複製貼上 -->

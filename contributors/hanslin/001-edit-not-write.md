@@ -33,7 +33,7 @@ Claude 預設傾向用 Write 因為它更「安全」：不需要精確匹配既
 ```markdown
 ## TOKEN DISCIPLINE
 
-- Prefer Edit over Write for existing files — 只送 diff，不重寫整檔。
+- Prefer Edit over Write for existing files：只送 diff，不重寫整檔。
 - 能用 Read 就不用 cat/head/tail
 - 能用 Edit 就不用 sed/awk
 - 能用 Grep 就不用 grep/rg

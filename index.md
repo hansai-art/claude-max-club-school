@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Claude MAX 俱樂部學校 — 社群共編 Claude Code 經驗資料庫
+title: Claude MAX 俱樂部學校：社群共編 Claude Code 經驗資料庫
 nav_order: 1
 permalink: /
 description: "台灣 Claude MAX 用戶共編的 Claude Code 踩坑經驗、CLAUDE.md 規則庫、新手懶人包。讓你的 AI 少犯別人已經踩過的坑。"
@@ -88,4 +88,4 @@ Claude Code 有一個官方功能 `/insight`，會自動分析你的使用模式
 
 ---
 
-> **A Community Project by Taiwan Claude MAX Users** — We share our Claude Code mistakes and lessons learned, so everyone's Claude gets smarter together. Articles are primarily in Traditional Chinese, but English contributions are welcome. [Start contributing]({% link getting-started.md %}).
+> **A Community Project by Taiwan Claude MAX Users**: We share our Claude Code mistakes and lessons learned, so everyone's Claude gets smarter together. Articles are primarily in Traditional Chinese, but English contributions are welcome. [Start contributing]({% link getting-started.md %}).

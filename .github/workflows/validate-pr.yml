@@ -44,13 +44,13 @@ jobs:
 
             # Block executable files
             if [[ "$FILE" =~ \.(sh|bash|py|rb|pl|exe|bat|cmd|ps1|jar|bin)$ ]]; then
-              echo "::error::Executable file not allowed: $FILE — only .md and .yml files are accepted"
+              echo "::error::Executable file not allowed: $FILE -only .md and .yml files are accepted"
               ERRORS=$((ERRORS + 1))
             fi
 
             # Block HTML files (XSS risk)
             if [[ "$FILE" =~ \.(html|htm|js|css|php)$ ]]; then
-              echo "::error::Web file not allowed: $FILE — only .md and .yml files are accepted"
+              echo "::error::Web file not allowed: $FILE -only .md and .yml files are accepted"
               ERRORS=$((ERRORS + 1))
             fi
 
@@ -71,7 +71,7 @@ jobs:
             if [[ "$FILE" =~ \.md$ ]] && [ -f "$FILE" ]; then
               # Block inline scripts in markdown
               if grep -qiP '<script|javascript:|on\w+\s*=' "$FILE" 2>/dev/null; then
-                echo "::error::Suspicious script content in $FILE — inline scripts are not allowed"
+                echo "::error::Suspicious script content in $FILE -inline scripts are not allowed"
                 ERRORS=$((ERRORS + 1))
               fi
               # Block iframes
@@ -102,7 +102,7 @@ jobs:
 
           echo "=== Boundary Check (PR author: $PR_AUTHOR) ==="
 
-          # Protected core files — only maintainers can touch
+          # Protected core files -only maintainers can touch
           MAINTAINERS="hansai-art"
           IS_MAINTAINER=false
           for M in $MAINTAINERS; do
@@ -145,7 +145,7 @@ jobs:
             # Contributors can only modify their own folder
             if [[ "$FILE" =~ ^contributors/([^/]+)/ ]]; then
               FOLDER_OWNER="${BASH_REMATCH[1]}"
-              # _template is protected — only maintainers
+              # _template is protected -only maintainers
               if [ "$FOLDER_OWNER" = "_template" ] && [ "$IS_MAINTAINER" = false ]; then
                 echo "::error::$FILE is in the _template folder. Only maintainers can modify templates."
                 ERRORS=$((ERRORS + 1))
@@ -157,7 +157,7 @@ jobs:
 
           done < /tmp/changed_files.txt
 
-          # Check deletions — extra strict
+          # Check deletions -extra strict
           while IFS= read -r FILE; do
             [ -z "$FILE" ] && continue
 

@@ -40,7 +40,7 @@ exclude:
   - contributors.yml
 
 # 頁尾
-footer_content: "Claude MAX 俱樂部學校 — 台灣 Claude MAX 用戶社群共同維護 | <a href=\"https://github.com/hansai-art/claude-max-club-school\">GitHub</a>"
+footer_content: "Claude MAX 俱樂部學校：台灣 Claude MAX 用戶社群共同維護 | <a href=\"https://github.com/hansai-art/claude-max-club-school\">GitHub</a>"
 
 # 啟用 back to top
 back_to_top: true
