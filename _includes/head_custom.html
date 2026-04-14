@@ -133,11 +133,16 @@ code {
   border-radius: 4px;
   padding: 2px 6px;
 }
-pre.highlight, .highlight pre, .highlight {
+pre.highlight, .highlight pre, .highlight,
+.language-plaintext.highlighter-rouge,
+.highlighter-rouge {
   background-color: var(--code-bg) !important;
   border-radius: 8px; border: none;
   padding: 16px 20px !important;
   overflow-x: auto;
+}
+.highlighter-rouge .highlight {
+  padding: 0 !important;
 }
 pre.highlight code, .highlight pre code,
 pre code {
