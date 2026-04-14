@@ -173,14 +173,18 @@ p, li, .fs-6, .fs-5, .fw-300 { color: var(--text) !important; }
 .theme-toggle {
   position: fixed; top: 12px; right: 16px; z-index: 99999;
   width: 40px; height: 40px; border-radius: 50%;
-  background: var(--claude-orange-dark); color: #fff;
-  border: 2px solid #fff;
+  background: #fff; color: #000;
+  border: 2px solid #000;
   cursor: pointer; font-size: 20px;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  transition: background 0.2s;
+  box-shadow: none;
 }
-.theme-toggle:hover { background: #a8502f; }
+.theme-toggle:hover { background: #eee; }
+[data-theme="dark"] .theme-toggle {
+  background: #000; color: #fff;
+  border-color: #fff;
+}
+[data-theme="dark"] .theme-toggle:hover { background: #222; }
 
 /* ===== Dark mode overrides (must be last) ===== */
 [data-theme="dark"] body,
