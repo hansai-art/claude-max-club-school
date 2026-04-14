@@ -27,9 +27,9 @@ Jekyll 4 的 `link` tag 會自動加 baseurl，但 GitHub Pages 用的是 Jekyll
 
 ## 可複用的 CLAUDE.md 規則
 
-```markdown
+```
 ### Jekyll on GitHub Pages
 - GitHub Pages 用 Jekyll 3.10，不是 Jekyll 4
-- link tag 必須寫成 {{ site.baseurl }}{% link page.md %}
+- link tag 必須寫成 site.baseurl + link page.md（用 Liquid 語法包裹）
 - 不要假設 baseurl 會自動加
 ```
