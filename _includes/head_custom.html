@@ -58,17 +58,41 @@ a:hover { color: var(--claude-orange); }
   background-color: rgba(217, 119, 87, 0.08);
 }
 
-/* ===== Buttons ===== */
-.btn-primary {
+/* ===== Buttons (override purple defaults) ===== */
+.btn-primary,
+a.btn-primary {
   background-color: var(--claude-orange) !important;
   border-color: var(--claude-orange) !important;
   color: #fff !important; border-radius: 8px;
+  text-decoration: none !important;
 }
-.btn-primary:hover {
+.btn-primary:hover,
+a.btn-primary:hover {
   background-color: var(--claude-orange-dark) !important;
   border-color: var(--claude-orange-dark) !important;
+  color: #fff !important;
 }
-.btn { border-radius: 8px; border-color: var(--border); }
+.btn, a.btn {
+  border-radius: 8px; border-color: var(--border);
+  color: var(--claude-orange-dark) !important;
+  text-decoration: none !important;
+}
+.btn:hover, a.btn:hover {
+  color: var(--claude-orange) !important;
+}
+
+/* ===== Search bar alignment ===== */
+.search {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.search-input-wrap {
+  margin: 0 !important;
+}
+.search-input {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
 
 /* ===== Code blocks (FIX: text must be visible) ===== */
 code {
