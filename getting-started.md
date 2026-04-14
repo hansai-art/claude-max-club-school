@@ -46,6 +46,15 @@ permalink: /getting-started/
 
 ---
 
+## 用 /insight 挖掘更多經驗
+{: .text-green-300 }
+
+Claude Code 有一個官方功能 **`/insight`**，會自動分析你過去的使用模式，找出重複犯的錯和效率低的習慣。
+
+在 Claude Code 裡輸入 `/insight`，看看它發現了什麼，然後把有價值的發現也一起貢獻上來。這比自己回想踩過什麼坑快得多。
+
+---
+
 ## 經驗文章長什麼樣？
 
 每篇文章只需要四個區塊：

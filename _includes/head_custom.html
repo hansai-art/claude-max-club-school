@@ -3,8 +3,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
-/* Claude.ai inspired overrides */
-
+/* ===== Light mode (default) ===== */
 :root {
   --claude-orange: #d97757;
   --claude-orange-dark: #c15f3c;
@@ -13,116 +12,134 @@
   --claude-cream: #f4f3ee;
   --claude-gray: #b0aea5;
   --claude-gray-light: #e8e6dc;
+  --bg: var(--claude-light);
+  --bg-sidebar: var(--claude-cream);
+  --text: var(--claude-dark);
+  --code-bg: #1e1e1e;
+  --code-text: #d4d4d4;
+  --inline-code-bg: var(--claude-cream);
+  --inline-code-text: var(--claude-dark);
+  --border: var(--claude-gray-light);
+  --table-header: var(--claude-cream);
 }
 
-/* Typography */
-body,
-.site-title,
-.nav-list,
-.search-input {
+/* ===== Dark mode ===== */
+[data-theme="dark"] {
+  --bg: #1a1a1a;
+  --bg-sidebar: #222;
+  --text: #e8e6dc;
+  --code-bg: #0d0d0d;
+  --code-text: #d4d4d4;
+  --inline-code-bg: #2a2a2a;
+  --inline-code-text: #e8e6dc;
+  --border: #333;
+  --table-header: #2a2a2a;
+  --claude-cream: #2a2a2a;
+  --claude-light: #1a1a1a;
+  --claude-dark: #e8e6dc;
+  --claude-gray-light: #333;
+}
+
+/* ===== Typography ===== */
+body, .site-title, .nav-list, .search-input {
   font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
+body { background-color: var(--bg) !important; color: var(--text) !important; }
+.site-title { font-size: 1rem !important; white-space: nowrap; font-weight: 700; color: var(--text) !important; }
 
-/* Site title */
-.site-title {
-  font-size: 1rem !important;
-  white-space: nowrap;
-  font-weight: 700;
-  color: var(--claude-dark) !important;
-}
+/* ===== Links ===== */
+a, .nav-list .nav-list-item a { color: var(--claude-orange-dark); }
+a:hover { color: var(--claude-orange); }
 
-/* Links */
-a, .nav-list .nav-list-item a {
-  color: var(--claude-orange-dark);
-}
-a:hover {
-  color: var(--claude-orange);
-}
-
-/* Sidebar */
-.side-bar {
-  background-color: var(--claude-cream);
-  border-right: 1px solid var(--claude-gray-light);
-}
-
-/* Active nav */
+/* ===== Sidebar ===== */
+.side-bar { background-color: var(--bg-sidebar) !important; border-right: 1px solid var(--border); }
 .nav-list .nav-list-item.active > .nav-list-link {
-  color: var(--claude-orange-dark);
-  font-weight: 700;
+  color: var(--claude-orange-dark); font-weight: 700;
   background-color: rgba(217, 119, 87, 0.08);
 }
 
-/* Buttons */
+/* ===== Buttons ===== */
 .btn-primary {
   background-color: var(--claude-orange) !important;
   border-color: var(--claude-orange) !important;
-  color: #fff !important;
-  border-radius: 8px;
+  color: #fff !important; border-radius: 8px;
 }
 .btn-primary:hover {
   background-color: var(--claude-orange-dark) !important;
   border-color: var(--claude-orange-dark) !important;
 }
-.btn {
-  border-radius: 8px;
-  border-color: var(--claude-gray-light);
-}
+.btn { border-radius: 8px; border-color: var(--border); }
 
-/* Code blocks */
+/* ===== Code blocks (FIX: text must be visible) ===== */
 code {
-  background-color: var(--claude-cream);
-  border: 1px solid var(--claude-gray-light);
+  background-color: var(--inline-code-bg) !important;
+  color: var(--inline-code-text) !important;
+  border: 1px solid var(--border);
   border-radius: 4px;
 }
+pre.highlight, .highlight pre {
+  background-color: var(--code-bg) !important;
+  border-radius: 8px; border: none;
+}
+pre.highlight code, .highlight pre code,
 pre code {
-  border: none;
-}
-pre.highlight {
-  background-color: var(--claude-dark) !important;
-  color: #e8e6dc;
-  border-radius: 8px;
+  background-color: transparent !important;
+  color: var(--code-text) !important;
   border: none;
 }
 
-/* Tables */
-th {
-  background-color: var(--claude-cream);
-  border-color: var(--claude-gray-light);
-  font-weight: 700;
-}
-td {
-  border-color: var(--claude-gray-light);
-}
+/* ===== Tables ===== */
+th { background-color: var(--table-header) !important; border-color: var(--border) !important; font-weight: 700; color: var(--text) !important; }
+td { border-color: var(--border) !important; color: var(--text) !important; }
 
-/* Search */
+/* ===== Search ===== */
 .search-input {
-  background-color: var(--claude-cream);
-  border: 1px solid var(--claude-gray-light);
-  border-radius: 8px;
+  background-color: var(--bg-sidebar) !important;
+  border: 1px solid var(--border); border-radius: 8px;
+  color: var(--text) !important;
 }
-.search-input:focus {
-  border-color: var(--claude-orange);
-  box-shadow: 0 0 0 2px rgba(217, 119, 87, 0.15);
-}
+.search-input:focus { border-color: var(--claude-orange); box-shadow: 0 0 0 2px rgba(217, 119, 87, 0.15); }
 
-/* Footer */
-.site-footer {
-  border-top: 1px solid var(--claude-gray-light);
-  color: var(--claude-gray);
-}
+/* ===== Main content ===== */
+.main-content { background-color: var(--bg) !important; color: var(--text) !important; }
+h1, h2, h3, h4 { color: var(--text) !important; }
+p, li, .fs-6, .fs-5, .fw-300 { color: var(--text) !important; }
 
-/* Headings */
-h1, h2, h3, h4 {
-  color: var(--claude-dark);
-}
+/* ===== Footer ===== */
+.site-footer { border-top: 1px solid var(--border); color: var(--claude-gray); background-color: var(--bg-sidebar) !important; }
 
-/* Main content area */
-.main-content {
-  background-color: var(--claude-light);
+/* ===== Theme toggle button ===== */
+.theme-toggle {
+  position: fixed; bottom: 20px; right: 20px; z-index: 9999;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--claude-orange); color: #fff;
+  border: none; cursor: pointer; font-size: 20px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: background 0.2s;
 }
-
-/* Back to top */
-.back-to-top {
-  color: var(--claude-orange-dark);
-}
+.theme-toggle:hover { background: var(--claude-orange-dark); }
 </style>
+
+<script>
+// Theme toggle
+(function() {
+  var saved = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.createElement('button');
+    btn.className = 'theme-toggle';
+    btn.setAttribute('aria-label', '切換深淺色模式');
+    btn.innerHTML = saved === 'dark' ? '☀️' : '🌙';
+    btn.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      btn.innerHTML = next === 'dark' ? '☀️' : '🌙';
+    });
+    document.body.appendChild(btn);
+  });
+})();
+</script>
