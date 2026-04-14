@@ -26,8 +26,8 @@ search.heading_level: 3
 # 導航
 nav_sort: case_sensitive
 
-# 外觀
-color_scheme: default
+# 外觀（不設 color_scheme，使用 just-the-docs 預設 light scheme）
+# Claude 風格配色由 head_custom.html CSS 覆蓋
 
 # 排除不需要渲染的檔案
 exclude:
