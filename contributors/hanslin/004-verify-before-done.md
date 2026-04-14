@@ -6,6 +6,7 @@ grand_parent: 貢獻者
 tags: [盲目重試, CLAUDE.md規則]
 date: 2026-04-02
 still_relevant: true
+permalink: /contributors/hanslin/004-verify-before-done/
 ---
 
 # 修完要自己驗證才能說完成

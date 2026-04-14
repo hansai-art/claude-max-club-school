@@ -2,6 +2,7 @@
 layout: default
 title: 運作方式
 nav_order: 4
+permalink: /how-it-works/
 ---
 
 # 運作方式

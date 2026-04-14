@@ -3,6 +3,7 @@ layout: default
 title: 新手懶人包 — Claude Code CLAUDE.md 通用規則
 nav_order: 3
 description: "不管什麼技術棧都適用的 CLAUDE.md 規則懶人包。一鍵安裝，讓你的 Claude Code 立刻變聰明。社群驗證、持續更新。"
+permalink: /starter-pack/
 ---
 
 # 新手懶人包

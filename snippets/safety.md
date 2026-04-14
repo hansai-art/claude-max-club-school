@@ -3,6 +3,7 @@ layout: default
 title: 安全規則
 parent: 片段庫
 nav_order: 2
+permalink: /snippets/safety/
 ---
 
 # 安全規則

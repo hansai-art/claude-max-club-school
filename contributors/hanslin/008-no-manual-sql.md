@@ -6,6 +6,7 @@ grand_parent: 貢獻者
 tags: [工具誤用, 工作流程]
 date: 2026-03-01
 still_relevant: true
+permalink: /contributors/hanslin/008-no-manual-sql/
 ---
 
 # 不要叫使用者手動執行 SQL

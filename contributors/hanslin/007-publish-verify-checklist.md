@@ -6,6 +6,7 @@ grand_parent: 貢獻者
 tags: [盲目重試, 工作流程]
 date: 2026-04-02
 still_relevant: true
+permalink: /contributors/hanslin/007-publish-verify-checklist/
 ---
 
 # 發布前必須 API 回讀驗證

@@ -3,6 +3,7 @@ layout: default
 title: CLAUDE.md 規則集
 parent: 經驗分類
 nav_order: 2
+permalink: /lessons/claude-md-rules/
 ---
 
 # CLAUDE.md 規則集

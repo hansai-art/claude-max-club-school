@@ -2,6 +2,7 @@
 layout: default
 title: 標籤分類
 nav_order: 8
+permalink: /tags/
 ---
 
 # 標籤分類

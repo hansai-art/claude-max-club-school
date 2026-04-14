@@ -6,6 +6,7 @@ grand_parent: 貢獻者
 tags: [覆蓋風險, CLAUDE.md規則]
 date: 2026-03-15
 still_relevant: true
+permalink: /contributors/hanslin/005-no-overwrite-remote/
 ---
 
 # 不要用本地舊檔覆蓋遠端內容

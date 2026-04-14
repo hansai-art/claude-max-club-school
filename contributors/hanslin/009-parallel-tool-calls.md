@@ -6,6 +6,7 @@ grand_parent: 貢獻者
 tags: [token浪費, 工作流程]
 date: 2026-04-05
 still_relevant: true
+permalink: /contributors/hanslin/009-parallel-tool-calls/
 ---
 
 # 平行呼叫工具省 token

@@ -3,6 +3,7 @@ layout: default
 title: "自動化腳本失敗要當場記錄"
 parent: hanslin
 grand_parent: 貢獻者
+permalink: /contributors/hanslin/003-automation-debug/
 ---
 
 # 自動化腳本失敗要當場記錄狀態

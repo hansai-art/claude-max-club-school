@@ -3,6 +3,7 @@ layout: default
 title: 開始貢獻
 nav_order: 2
 description: "如何用 Claude Code 一句話自動貢獻經驗到 Claude MAX 俱樂部學校。Fork、建資料夾、寫文章、發 PR 全部讓 AI 代勞。"
+permalink: /getting-started/
 ---
 
 # 開始貢獻

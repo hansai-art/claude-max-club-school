@@ -6,6 +6,7 @@ grand_parent: 貢獻者
 tags: [覆蓋風險, CLAUDE.md規則]
 date: 2026-03-10
 still_relevant: true
+permalink: /contributors/hanslin/006-version-increment/
 ---
 
 # 每次更新都要遞增版本號

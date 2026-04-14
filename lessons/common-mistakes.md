@@ -3,6 +3,7 @@ layout: default
 title: 常見錯誤
 parent: 經驗分類
 nav_order: 1
+permalink: /lessons/common-mistakes/
 ---
 
 # 常見錯誤

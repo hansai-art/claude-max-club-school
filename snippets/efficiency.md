@@ -3,6 +3,7 @@ layout: default
 title: 效率規則
 parent: 片段庫
 nav_order: 1
+permalink: /snippets/efficiency/
 ---
 
 # 效率規則

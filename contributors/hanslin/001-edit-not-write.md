@@ -3,6 +3,7 @@ layout: default
 title: "用 Edit 不要用 Write"
 parent: hanslin
 grand_parent: 貢獻者
+permalink: /contributors/hanslin/001-edit-not-write/
 ---
 
 # 用 Edit 不要用 Write：Claude 會重寫整個檔案

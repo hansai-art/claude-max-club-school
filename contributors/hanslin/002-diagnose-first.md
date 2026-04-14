@@ -3,6 +3,7 @@ layout: default
 title: "先診斷再動手"
 parent: hanslin
 grand_parent: 貢獻者
+permalink: /contributors/hanslin/002-diagnose-first/
 ---
 
 # 先診斷再動手：不要讓 Claude 猜答案
