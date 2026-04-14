@@ -101,22 +101,28 @@ a.btn-primary:hover {
   box-sizing: border-box !important;
 }
 
-/* ===== Code blocks (FIX: text must be visible) ===== */
+/* ===== Code blocks (FIX: text must be visible + padding) ===== */
 code {
   background-color: var(--inline-code-bg) !important;
   color: var(--inline-code-text) !important;
   border: 1px solid var(--border);
   border-radius: 4px;
+  padding: 2px 6px;
 }
-pre.highlight, .highlight pre {
+pre.highlight, .highlight pre, .highlight {
   background-color: var(--code-bg) !important;
   border-radius: 8px; border: none;
+  padding: 16px 20px !important;
+  overflow-x: auto;
 }
 pre.highlight code, .highlight pre code,
 pre code {
   background-color: transparent !important;
   color: var(--code-text) !important;
   border: none;
+  padding: 0 !important;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 /* ===== Tables ===== */
@@ -139,14 +145,14 @@ p, li, .fs-6, .fs-5, .fw-300 { color: var(--text) !important; }
 /* ===== Footer ===== */
 .site-footer { border-top: 1px solid var(--border); color: var(--claude-gray); background-color: var(--bg-sidebar) !important; }
 
-/* ===== Theme toggle button ===== */
+/* ===== Theme toggle button (top-right) ===== */
 .theme-toggle {
-  position: fixed; bottom: 20px; right: 20px; z-index: 9999;
-  width: 44px; height: 44px; border-radius: 50%;
+  position: fixed; top: 8px; right: 20px; z-index: 9999;
+  width: 36px; height: 36px; border-radius: 50%;
   background: var(--claude-orange); color: #fff;
-  border: none; cursor: pointer; font-size: 20px;
+  border: none; cursor: pointer; font-size: 18px;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   transition: background 0.2s;
 }
 .theme-toggle:hover { background: var(--claude-orange-dark); }
