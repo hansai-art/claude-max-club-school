@@ -178,24 +178,9 @@ p, li, .fs-6, .fs-5, .fw-300 { color: var(--text) !important; }
 </style>
 
 <script>
-// Theme toggle
+// Apply saved theme immediately (before paint)
 (function() {
   var saved = localStorage.getItem('theme') || 'light';
   document.documentElement.setAttribute('data-theme', saved);
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var btn = document.createElement('button');
-    btn.className = 'theme-toggle';
-    btn.setAttribute('aria-label', '切換深淺色模式');
-    btn.innerHTML = saved === 'dark' ? '☀️' : '🌙';
-    btn.addEventListener('click', function() {
-      var current = document.documentElement.getAttribute('data-theme');
-      var next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      btn.innerHTML = next === 'dark' ? '☀️' : '🌙';
-    });
-    document.body.appendChild(btn);
-  });
 })();
 </script>
