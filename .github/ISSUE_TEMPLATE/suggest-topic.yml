@@ -1,0 +1,20 @@
+name: 建議新主題
+description: 建議一個新的經驗分類主題
+title: "[主題建議] "
+labels: ["topic-suggestion"]
+body:
+  - type: input
+    id: topic_name
+    attributes:
+      label: 主題名稱
+      placeholder: "例如：多檔案重構、MCP Server 整合"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 說明
+      description: 為什麼需要這個主題？有哪些常見問題值得收集？
+    validations:
+      required: true

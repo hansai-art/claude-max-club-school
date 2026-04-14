@@ -1,0 +1,72 @@
+name: 分享新經驗
+description: 分享你使用 Claude Code 時學到的教訓
+title: "[經驗] "
+labels: ["new-lesson"]
+body:
+  - type: input
+    id: github_username
+    attributes:
+      label: 你的 GitHub 帳號
+      placeholder: "例如：johndoe"
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: 經驗標題
+      description: 用一句話描述 Claude 犯了什麼錯
+      placeholder: "例如：Claude 會重寫整個檔案而不是只改 diff"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 問題描述
+      description: 發生了什麼事？越具體越好
+      placeholder: "描述你遇到的情況..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: cause
+    attributes:
+      label: 原因分析
+      description: 為什麼 Claude 會這樣做？
+      placeholder: "你覺得根本原因是什麼..."
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: 解決方案
+      description: 你怎麼解決的？
+      placeholder: "你做了什麼來修正這個問題..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: claude_md_rule
+    attributes:
+      label: 可複用的 CLAUDE.md 規則
+      description: 可以直接貼進 CLAUDE.md 的規則片段
+      placeholder: |
+        ```markdown
+        - 你的規則寫在這裡
+        ```
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 分類
+      options:
+        - 常見錯誤
+        - Debug 心得
+        - 工作流程
+        - CLAUDE.md 技巧
+        - 提示技巧
+        - 其他
+    validations:
+      required: true

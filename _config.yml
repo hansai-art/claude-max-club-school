@@ -1,0 +1,35 @@
+title: Claude MAX 俱樂部學校
+description: 社群共編的 Claude Code 經驗資料庫 — 大家一起養一個更聰明的 Claude
+remote_theme: just-the-docs/just-the-docs@v0.10.1
+
+url: ""
+baseurl: "/claude-max-club-school"
+
+# 搜尋
+search_enabled: true
+search.heading_level: 3
+
+# 導航
+nav_sort: case_sensitive
+
+# 外觀
+color_scheme: dark
+
+# 排除不需要渲染的檔案
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - contributors/_template
+
+# 頁尾
+footer_content: "Claude MAX 俱樂部學校 — 由社群共同維護 | <a href=\"https://github.com/hansai-art/claude-max-club-school\">GitHub</a>"
+
+# 啟用 back to top
+back_to_top: true
+back_to_top_text: "回到頂部"
+
+# GA (optional, 之後再加)
+# ga_tracking:
