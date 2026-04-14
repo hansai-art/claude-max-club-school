@@ -1,0 +1,11 @@
+# 核心檔案只有維護者能改
+/_config.yml @hansai-art
+/index.md @hansai-art
+/starter-pack.md @hansai-art
+/TAGS.md @hansai-art
+/contributors.yml @hansai-art
+/contributors/index.md @hansai-art
+/.github/ @hansai-art
+
+# 每個人只能改自己的資料夾（PR review 時人工確認）
+# CODEOWNERS 無法做到動態比對，靠 CI 自動擋

@@ -2,70 +2,230 @@ name: Validate PR
 
 on:
   pull_request:
-    paths:
-      - 'contributors/**'
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Check contributor folder structure
+      - name: Get PR author and changed files
+        id: info
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          echo "Checking PR files..."
+          PR_AUTHOR="${{ github.event.pull_request.user.login }}"
+          echo "author=$PR_AUTHOR" >> "$GITHUB_OUTPUT"
+
+          # Get all changed files
+          git diff --name-only --diff-filter=ACDMR ${{ github.event.pull_request.base.sha }}..HEAD > /tmp/changed_files.txt
+          git diff --name-only --diff-filter=D ${{ github.event.pull_request.base.sha }}..HEAD > /tmp/deleted_files.txt
+          echo "Changed files:"
+          cat /tmp/changed_files.txt
+          echo "---"
+          echo "Deleted files:"
+          cat /tmp/deleted_files.txt
+
+      - name: Security checks
+        run: |
           ERRORS=0
 
-          # Get list of changed files in contributors/
-          CHANGED=$(git diff --name-only ${{ github.event.pull_request.base.sha }}..HEAD -- contributors/ || true)
+          echo "=== Security Scan ==="
 
-          if [ -z "$CHANGED" ]; then
-            echo "No contributor files changed."
-            exit 0
-          fi
+          while IFS= read -r FILE; do
+            [ -z "$FILE" ] && continue
 
-          # Extract unique contributor folders (skip _template)
-          FOLDERS=$(echo "$CHANGED" | grep -oP 'contributors/[^/]+' | sort -u | grep -v '_template' || true)
-
-          for FOLDER in $FOLDERS; do
-            USERNAME=$(basename "$FOLDER")
-            echo "Checking contributor: $USERNAME"
-
-            # Must have index.md
-            if [ ! -f "$FOLDER/index.md" ]; then
-              echo "::error::$FOLDER/index.md is missing. Every contributor needs an index.md with their intro."
+            # Block executable files
+            if [[ "$FILE" =~ \.(sh|bash|py|rb|pl|exe|bat|cmd|ps1|jar|bin)$ ]]; then
+              echo "::error::Executable file not allowed: $FILE — only .md and .yml files are accepted"
               ERRORS=$((ERRORS + 1))
             fi
 
-            # Check each lesson file has required frontmatter
-            for FILE in "$FOLDER"/*.md; do
-              [ "$FILE" = "$FOLDER/index.md" ] && continue
-              [ ! -f "$FILE" ] && continue
+            # Block HTML files (XSS risk)
+            if [[ "$FILE" =~ \.(html|htm|js|css|php)$ ]]; then
+              echo "::error::Web file not allowed: $FILE — only .md and .yml files are accepted"
+              ERRORS=$((ERRORS + 1))
+            fi
 
-              # Check for required frontmatter fields
-              if ! grep -q "^title:" "$FILE"; then
-                echo "::error::$FILE is missing 'title' in frontmatter"
-                ERRORS=$((ERRORS + 1))
-              fi
-              if ! grep -q "^parent:" "$FILE"; then
-                echo "::error::$FILE is missing 'parent' in frontmatter"
-                ERRORS=$((ERRORS + 1))
-              fi
-              if ! grep -q "grand_parent:" "$FILE"; then
-                echo "::error::$FILE is missing 'grand_parent' in frontmatter"
-                ERRORS=$((ERRORS + 1))
-              fi
+            # Block hidden files (except .github/)
+            BASENAME=$(basename "$FILE")
+            if [[ "$BASENAME" == .* && ! "$FILE" =~ ^\.github/ ]]; then
+              echo "::error::Hidden file not allowed: $FILE"
+              ERRORS=$((ERRORS + 1))
+            fi
 
-              # Check for "可複用的 CLAUDE.md 規則" section
-              if ! grep -qi "CLAUDE.md" "$FILE"; then
-                echo "::warning::$FILE might be missing a 'CLAUDE.md 規則' section. Every lesson should include reusable rules."
+            # Block symlinks
+            if [ -L "$FILE" ]; then
+              echo "::error::Symlink not allowed: $FILE"
+              ERRORS=$((ERRORS + 1))
+            fi
+
+            # Scan markdown for suspicious content
+            if [[ "$FILE" =~ \.md$ ]] && [ -f "$FILE" ]; then
+              # Block inline scripts in markdown
+              if grep -qiP '<script|javascript:|on\w+\s*=' "$FILE" 2>/dev/null; then
+                echo "::error::Suspicious script content in $FILE — inline scripts are not allowed"
+                ERRORS=$((ERRORS + 1))
               fi
-            done
-          done
+              # Block iframes
+              if grep -qi '<iframe' "$FILE" 2>/dev/null; then
+                echo "::error::iframe not allowed in $FILE"
+                ERRORS=$((ERRORS + 1))
+              fi
+              # Block data URIs (potential payload hiding)
+              if grep -qi 'data:text/html' "$FILE" 2>/dev/null; then
+                echo "::error::data URI not allowed in $FILE"
+                ERRORS=$((ERRORS + 1))
+              fi
+            fi
+
+          done < /tmp/changed_files.txt
 
           if [ $ERRORS -gt 0 ]; then
-            echo "::error::Found $ERRORS error(s). Please fix them before merging."
+            echo "::error::Security scan failed with $ERRORS error(s)"
             exit 1
           fi
+          echo "Security scan passed."
 
-          echo "All checks passed!"
+      - name: Check contributor boundaries
+        run: |
+          ERRORS=0
+          WARNINGS=0
+          PR_AUTHOR="${{ steps.info.outputs.author }}"
+
+          echo "=== Boundary Check (PR author: $PR_AUTHOR) ==="
+
+          # Protected core files — only maintainers can touch
+          MAINTAINERS="hansai-art"
+          IS_MAINTAINER=false
+          for M in $MAINTAINERS; do
+            if [ "$PR_AUTHOR" = "$M" ]; then
+              IS_MAINTAINER=true
+              break
+            fi
+          done
+
+          PROTECTED_PATTERNS=(
+            "_config.yml"
+            "index.md"
+            "starter-pack.md"
+            "TAGS.md"
+            "contributors.yml"
+            "contributors/index.md"
+            ".github/"
+            "robots.txt"
+            "Gemfile"
+            "how-it-works.md"
+            "getting-started.md"
+            "lessons/"
+            "snippets/"
+          )
+
+          while IFS= read -r FILE; do
+            [ -z "$FILE" ] && continue
+
+            # Check protected files
+            if [ "$IS_MAINTAINER" = false ]; then
+              for PATTERN in "${PROTECTED_PATTERNS[@]}"; do
+                if [[ "$FILE" == $PATTERN* || "$FILE" == "$PATTERN" ]]; then
+                  echo "::error::$FILE is a protected file. Only maintainers can modify it. Please only add files to contributors/$PR_AUTHOR/"
+                  ERRORS=$((ERRORS + 1))
+                  break
+                fi
+              done
+            fi
+
+            # Contributors can only modify their own folder
+            if [[ "$FILE" =~ ^contributors/([^/]+)/ ]]; then
+              FOLDER_OWNER="${BASH_REMATCH[1]}"
+              if [ "$FOLDER_OWNER" != "$PR_AUTHOR" ] && [ "$FOLDER_OWNER" != "_template" ] && [ "$IS_MAINTAINER" = false ]; then
+                echo "::error::$FILE belongs to contributor '$FOLDER_OWNER', but this PR is from '$PR_AUTHOR'. You can only modify files in contributors/$PR_AUTHOR/"
+                ERRORS=$((ERRORS + 1))
+              fi
+            fi
+
+          done < /tmp/changed_files.txt
+
+          # Check deletions — extra strict
+          while IFS= read -r FILE; do
+            [ -z "$FILE" ] && continue
+
+            if [[ "$FILE" =~ ^contributors/([^/]+)/ ]]; then
+              FOLDER_OWNER="${BASH_REMATCH[1]}"
+              if [ "$FOLDER_OWNER" != "$PR_AUTHOR" ] && [ "$IS_MAINTAINER" = false ]; then
+                echo "::error::BLOCKED: $FILE was deleted but belongs to '$FOLDER_OWNER'. You cannot delete other people's files."
+                ERRORS=$((ERRORS + 1))
+              fi
+            fi
+
+            # Non-contributor files should never be deleted by non-maintainers
+            if [[ ! "$FILE" =~ ^contributors/ ]] && [ "$IS_MAINTAINER" = false ]; then
+              echo "::error::BLOCKED: $FILE was deleted. Only maintainers can delete core files."
+              ERRORS=$((ERRORS + 1))
+            fi
+
+          done < /tmp/deleted_files.txt
+
+          if [ $ERRORS -gt 0 ]; then
+            echo "::error::Boundary check failed with $ERRORS error(s)"
+            exit 1
+          fi
+          echo "Boundary check passed."
+
+      - name: Validate frontmatter
+        run: |
+          ERRORS=0
+          PR_AUTHOR="${{ steps.info.outputs.author }}"
+
+          echo "=== Frontmatter Validation ==="
+
+          while IFS= read -r FILE; do
+            [ -z "$FILE" ] && continue
+            [[ ! "$FILE" =~ ^contributors/[^/]+/[^/]+\.md$ ]] && continue
+            [[ "$FILE" =~ /index\.md$ ]] && continue
+            [[ "$FILE" =~ /_template/ ]] && continue
+            [ ! -f "$FILE" ] && continue
+
+            echo "Checking: $FILE"
+
+            if ! grep -q "^title:" "$FILE"; then
+              echo "::error::$FILE missing 'title' in frontmatter"
+              ERRORS=$((ERRORS + 1))
+            fi
+            if ! grep -q "^parent:" "$FILE"; then
+              echo "::error::$FILE missing 'parent' in frontmatter"
+              ERRORS=$((ERRORS + 1))
+            fi
+            if ! grep -q "grand_parent:" "$FILE"; then
+              echo "::error::$FILE missing 'grand_parent' in frontmatter"
+              ERRORS=$((ERRORS + 1))
+            fi
+            if ! grep -qi "CLAUDE\.md" "$FILE"; then
+              echo "::warning::$FILE may be missing a 'CLAUDE.md 規則' section"
+            fi
+
+          done < /tmp/changed_files.txt
+
+          if [ $ERRORS -gt 0 ]; then
+            echo "::error::Frontmatter validation failed with $ERRORS error(s)"
+            exit 1
+          fi
+          echo "Frontmatter validation passed."
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## PR Validation Summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Check | Status |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|:------|:-------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Security scan | ${{ steps.info.outcome != 'failure' && '✅' || '❌' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Boundary check | Completed |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Frontmatter | Completed |" >> "$GITHUB_STEP_SUMMARY"
