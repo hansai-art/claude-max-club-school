@@ -58,15 +58,27 @@ body:
       required: true
 
   - type: dropdown
-    id: category
+    id: problem_type
     attributes:
-      label: 分類
+      label: 問題類型
       options:
-        - 常見錯誤
-        - Debug 心得
-        - 工作流程
-        - CLAUDE.md 技巧
+        - 工具誤用
+        - 盲目重試
+        - 覆蓋風險
+        - 診斷不足
+        - token浪費
+        - 安全疏忽
+    validations:
+      required: true
+
+  - type: dropdown
+    id: solution_type
+    attributes:
+      label: 解決方式
+      options:
+        - CLAUDE.md規則
         - 提示技巧
-        - 其他
+        - 工作流程
+        - hooks
     validations:
       required: true

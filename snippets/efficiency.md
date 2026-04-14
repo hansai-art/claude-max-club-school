@@ -2,53 +2,70 @@
 layout: default
 title: 效率規則
 parent: 片段庫
+nav_order: 1
 ---
 
 # 效率規則
 
-減少 token 浪費、讓 Claude 一次做對的規則。
+減少 token 浪費、讓 Claude 一次做對的規則。**這裡是 canonical 版本**，其他頁面都連結到這裡。
 
 ---
 
 ## 工具使用優先順序
 
-```markdown
-## TOKEN DISCIPLINE
+來源：[hanslin/001]({% link contributors/hanslin/001-edit-not-write.md %})
 
-- Prefer Edit over Write for existing files — 只送 diff，不重寫整檔。
-- Do not re-read files already read in this session unless content changed.
+```markdown
+- Prefer Edit over Write for existing files — 只送 diff，不重寫整檔
 - 能用 Read 就不用 cat/head/tail
 - 能用 Edit 就不用 sed/awk
 - 能用 Grep 就不用 grep/rg
 - 能用 Glob 就不用 find/ls
-- Bash 只用在：shell script 執行、curl API、pip/npm 安裝、git 操作
+- Bash 只用在：shell script 執行、curl API、安裝套件、git 操作
 ```
-
-**效果**：根據實測數據，Bash 佔工具使用的 50% 以上，其中大部分可以用專用工具替代。加上這條規則後 token 消耗明顯下降。
 
 ---
 
 ## 診斷優先
 
+來源：[hanslin/002]({% link contributors/hanslin/002-diagnose-first.md %})
+
 ```markdown
-### Diagnose Before Fixing
-- MUST 先列 2-3 個可能原因，讀 code 確認根本原因，才動手
-- 修法不 work，重新診斷，NEVER 疊 patch
-- 失敗後不盲目重試，先讀錯誤訊息診斷原因
+- MUST 先列 2-3 個可能原因，讀 code 確認根本原因，才動手修
+- 修法不 work 就 STOP 重新診斷，NEVER 在錯的方向疊 patch
+- 失敗後先讀錯誤訊息，不要盲目重試
 ```
 
-**效果**：消除「wrong approach」類型的浪費。在實測 64 sessions 中，73 次 wrong approach 是最大的 token 浪費源。
+---
+
+## 平行操作
+
+來源：[hanslin/009]({% link contributors/hanslin/009-parallel-tool-calls.md %})
+
+```markdown
+- 需要讀多個檔案時，一次送多個 Read，不要分多輪
+- 需要同時跑 curl 和讀檔時，Bash + Read 平行送出
+- 驗證多個 URL 時，一個 Bash 呼叫 for loop 全部檢查
+- 研究類任務 dispatch 背景 agent，主線程繼續做不依賴結果的工作
+```
+
+---
+
+## 精準讀取
+
+來源：[hanslin/010]({% link contributors/hanslin/010-read-only-what-you-need.md %})
+
+```markdown
+- 大檔案（>100 行）不要整個讀進來
+- 先用 Grep 定位行號，再用 Read offset/limit 只讀那一段
+- Write/Edit 完不要 Read 回來驗證，信任自己剛寫的內容
+```
 
 ---
 
 ## 回應精簡
 
 ```markdown
-## RESPONSE STYLE
-
-- No sycophantic openers or closing fluff. 直接講重點。
-- 回答完就停，不加「還需要什麼嗎？」「希望這有幫助」之類的廢話。
-- Write 完不要 Read 驗證，信任自己剛寫的檔案。
+- 直接講重點，不要開場白和結尾客套話
+- 回答完就停，不加「還需要什麼嗎？」
 ```
-
-**效果**：每次省下 1-3 輪來回，累積起來很可觀。

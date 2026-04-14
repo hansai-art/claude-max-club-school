@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CLAUDE.md 片段庫
+title: 片段庫
 nav_order: 7
 has_children: true
 description: "可直接複製貼上的 CLAUDE.md 規則片段。涵蓋效率、安全、UI、Git 等分類。每條規則都來自實戰踩坑經驗。"

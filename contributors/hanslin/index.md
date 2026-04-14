@@ -21,3 +21,10 @@ has_children: true
 - [用 Edit 不要用 Write]({% link contributors/hanslin/001-edit-not-write.md %}) — Claude 會重寫整個檔案而不是只改 diff
 - [先診斷再動手]({% link contributors/hanslin/002-diagnose-first.md %}) — 不要讓 Claude 猜答案，先跑診斷
 - [自動化腳本失敗要當場記錄]({% link contributors/hanslin/003-automation-debug.md %}) — 盲目重試不如第一次就記 log
+- [修完要自己驗證才能說完成]({% link contributors/hanslin/004-verify-before-done.md %}) — 不要樂觀回報「完成」
+- [不要用本地舊檔覆蓋遠端內容]({% link contributors/hanslin/005-no-overwrite-remote.md %}) — 先拉最新版再改
+- [每次更新都要遞增版本號]({% link contributors/hanslin/006-version-increment.md %}) — 不要覆蓋舊版檔案
+- [發布前必須 API 回讀驗證]({% link contributors/hanslin/007-publish-verify-checklist.md %}) — 不要憑記憶認為已設定
+- [不要叫使用者手動執行 SQL]({% link contributors/hanslin/008-no-manual-sql.md %}) — 自己找替代方案
+- [平行呼叫工具省 token]({% link contributors/hanslin/009-parallel-tool-calls.md %}) — 能同時做的不要分開做
+- [只讀你需要的部分]({% link contributors/hanslin/010-read-only-what-you-need.md %}) — 用 offset/limit 精準讀取

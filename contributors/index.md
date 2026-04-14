@@ -17,7 +17,7 @@ has_children: true
 
 | 貢獻者 | 經驗數 | 主要領域 |
 |:-------|:------|:---------|
-| [hanslin]({% link contributors/hanslin/index.md %}) | 3 | WordPress、Token 效率、自動化 |
+| [hanslin]({% link contributors/hanslin/index.md %}) | 10 | WordPress、Token 效率、覆蓋風險、自動化、驗證流程 |
 
 ---
 

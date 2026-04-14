@@ -2,42 +2,45 @@
 layout: default
 title: 常見錯誤
 parent: 經驗分類
+nav_order: 1
 ---
 
 # 常見錯誤
 
-Claude Code 最常犯的錯，幾乎每個人都會遇到。
+Claude Code 最常犯的錯。按「問題類型」分類，連結到貢獻者的原文。
 
 ---
 
-## 1. 用 Write 覆蓋整個檔案而不是用 Edit 改 diff
+## 工具誤用
 
-**貢獻者**：[hanslin]({% link contributors/hanslin/001-edit-not-write.md %})
+| 問題 | 貢獻者 | 驗證人數 |
+|:-----|:-------|:--------|
+| [用 Write 覆蓋整檔而不是 Edit 改 diff]({% link contributors/hanslin/001-edit-not-write.md %}) | hanslin | 1 |
+| [不要叫使用者手動執行 SQL]({% link contributors/hanslin/008-no-manual-sql.md %}) | hanslin | 1 |
 
-Claude 修改檔案時傾向重寫整個檔案而非只改需要的部分，造成 token 浪費和內容遺失風險。
+## 盲目重試
 
-**解法**：在 CLAUDE.md 明確指定 `Prefer Edit over Write for existing files`。
+| 問題 | 貢獻者 | 驗證人數 |
+|:-----|:-------|:--------|
+| [遇到 bug 直接猜答案不先診斷]({% link contributors/hanslin/002-diagnose-first.md %}) | hanslin | 1 |
+| [自動化腳本失敗只會盲目重試]({% link contributors/hanslin/003-automation-debug.md %}) | hanslin | 1 |
+| [修完直接說完成不驗證]({% link contributors/hanslin/004-verify-before-done.md %}) | hanslin | 1 |
+| [發布後不 API 回讀確認]({% link contributors/hanslin/007-publish-verify-checklist.md %}) | hanslin | 1 |
+
+## 覆蓋風險
+
+| 問題 | 貢獻者 | 驗證人數 |
+|:-----|:-------|:--------|
+| [用本地舊檔覆蓋遠端內容]({% link contributors/hanslin/005-no-overwrite-remote.md %}) | hanslin | 1 |
+| [覆蓋舊版檔案不遞增版本號]({% link contributors/hanslin/006-version-increment.md %}) | hanslin | 1 |
+
+## token 浪費
+
+| 問題 | 貢獻者 | 驗證人數 |
+|:-----|:-------|:--------|
+| [讀整個檔案而不是只讀需要的部分]({% link contributors/hanslin/010-read-only-what-you-need.md %}) | hanslin | 1 |
+| [能同時做的事分成多輪做]({% link contributors/hanslin/009-parallel-tool-calls.md %}) | hanslin | 1 |
 
 ---
 
-## 2. 遇到 bug 直接猜答案、不先診斷
-
-**貢獻者**：[hanslin]({% link contributors/hanslin/002-diagnose-first.md %})
-
-Claude 收到問題後立刻開始改 code，猜錯了就繼續疊 patch，越改越糟。
-
-**解法**：在 CLAUDE.md 加入 `MUST 先列 2-3 個可能原因，讀 code 確認根本原因，才動手`。
-
----
-
-## 3. 自動化腳本失敗只會盲目重試
-
-**貢獻者**：[hanslin]({% link contributors/hanslin/003-automation-debug.md %})
-
-Claude 寫的 retry 邏輯會用一模一樣的方式重試，不記錄失敗原因。
-
-**解法**：要求失敗時先 log 實際狀態，再決定是否重試。
-
----
-
-*有遇到其他常見錯誤嗎？[貢獻你的經驗]({% link getting-started.md %})。*
+**驗證人數** = 多少個貢獻者獨立發現同樣的問題。你也遇過？[貢獻你的經驗]({% link getting-started.md %})，驗證人數 +1。

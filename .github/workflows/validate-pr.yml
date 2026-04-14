@@ -145,7 +145,11 @@ jobs:
             # Contributors can only modify their own folder
             if [[ "$FILE" =~ ^contributors/([^/]+)/ ]]; then
               FOLDER_OWNER="${BASH_REMATCH[1]}"
-              if [ "$FOLDER_OWNER" != "$PR_AUTHOR" ] && [ "$FOLDER_OWNER" != "_template" ] && [ "$IS_MAINTAINER" = false ]; then
+              # _template is protected — only maintainers
+              if [ "$FOLDER_OWNER" = "_template" ] && [ "$IS_MAINTAINER" = false ]; then
+                echo "::error::$FILE is in the _template folder. Only maintainers can modify templates."
+                ERRORS=$((ERRORS + 1))
+              elif [ "$FOLDER_OWNER" != "$PR_AUTHOR" ] && [ "$FOLDER_OWNER" != "_template" ] && [ "$IS_MAINTAINER" = false ]; then
                 echo "::error::$FILE belongs to contributor '$FOLDER_OWNER', but this PR is from '$PR_AUTHOR'. You can only modify files in contributors/$PR_AUTHOR/"
                 ERRORS=$((ERRORS + 1))
               fi

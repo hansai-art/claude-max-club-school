@@ -1,0 +1,28 @@
+name: 我也遇過這個問題
+description: 驗證某個已存在的經驗，增加它的可信度
+title: "[驗證] "
+labels: ["me-too"]
+body:
+  - type: input
+    id: lesson_link
+    attributes:
+      label: 哪篇經驗文章？
+      description: 貼上你也遇過的那篇文章的檔案路徑或網址
+      placeholder: "例如：contributors/hanslin/001-edit-not-write.md"
+    validations:
+      required: true
+
+  - type: textarea
+    id: my_experience
+    attributes:
+      label: 你的經歷
+      description: 簡單描述你遇到的情況，跟原文有什麼相同或不同？
+      placeholder: "我在做 XX 的時候也遇到了..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_rule
+    attributes:
+      label: 你有額外的 CLAUDE.md 規則要補充嗎？（可選）
+      description: 如果你發現原文的規則不夠完整，可以在這裡補充

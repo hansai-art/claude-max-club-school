@@ -68,9 +68,11 @@ Claude MAX 俱樂部學校做的事情很簡單：
 
 ## 最新貢獻
 
-- [用 Edit 不要用 Write]({% link contributors/hanslin/001-edit-not-write.md %}) by hanslin
-- [先診斷再動手]({% link contributors/hanslin/002-diagnose-first.md %}) by hanslin
-- [自動化腳本失敗要當場記錄狀態]({% link contributors/hanslin/003-automation-debug.md %}) by hanslin
+- [只讀你需要的部分]({% link contributors/hanslin/010-read-only-what-you-need.md %}) by hanslin
+- [平行呼叫工具省 token]({% link contributors/hanslin/009-parallel-tool-calls.md %}) by hanslin
+- [不要叫使用者手動執行 SQL]({% link contributors/hanslin/008-no-manual-sql.md %}) by hanslin
+- [發布前必須 API 回讀驗證]({% link contributors/hanslin/007-publish-verify-checklist.md %}) by hanslin
+- [不要用本地舊檔覆蓋遠端內容]({% link contributors/hanslin/005-no-overwrite-remote.md %}) by hanslin
 
 ---
 
