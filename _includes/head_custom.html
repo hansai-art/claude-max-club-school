@@ -52,18 +52,26 @@ h1, h2, h3, h4, p, li, td, th, strong, b,
 a { color: var(--link) !important; }
 a:hover { color: var(--link-hover) !important; }
 
-/* ===== Sidebar ===== */
-.side-bar { background-color: var(--bg-sidebar) !important; border-right: 1px solid var(--border); }
+/* ===== Sidebar：純色背景 + 框線分隔 ===== */
+.side-bar { background-color: var(--bg-sidebar) !important; background-image: none !important; border-right: 1px solid var(--border); }
+.site-header { border-bottom: 1px solid var(--border); }
 .nav-list .nav-list-item a { color: var(--text) !important; }
 .nav-list .nav-list-item a:hover { color: var(--link) !important; }
 .nav-list .nav-list-item.active > .nav-list-link {
   color: var(--link) !important; font-weight: 700;
   background-color: transparent !important;
-  border-left: none !important;
+  background-image: none !important;
+  border-left: 2px solid var(--link) !important;
 }
 .nav-list-expander { color: var(--text) !important; }
 [data-theme="dark"] .nav-list .nav-list-item a { color: #ccc !important; }
 [data-theme="dark"] .nav-list .nav-list-item.active > .nav-list-link { color: var(--link) !important; }
+
+/* ===== 右側主內容：無框線 ===== */
+.main-content table, .main-content .table-wrapper table { border: none !important; }
+.main-content table th, .main-content table td { border: none !important; border-bottom: 1px solid var(--border) !important; }
+.main-content hr { border: none !important; border-bottom: 1px solid var(--border) !important; }
+.main-content .highlight, .main-content .highlighter-rouge { border: none !important; }
 
 /* ===== Buttons ===== */
 .btn-primary, .btn-primary:hover, .btn-primary:active, a.btn-primary, a.btn-primary:hover {
