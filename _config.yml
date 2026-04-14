@@ -27,7 +27,7 @@ search.heading_level: 3
 nav_sort: case_sensitive
 
 # 外觀
-color_scheme: dark
+color_scheme: claude
 
 # 排除不需要渲染的檔案
 exclude:

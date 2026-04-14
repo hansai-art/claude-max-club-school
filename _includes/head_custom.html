@@ -1,3 +1,128 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
 <style>
-.site-title { font-size: 1rem !important; white-space: nowrap; }
+/* Claude.ai inspired overrides */
+
+:root {
+  --claude-orange: #d97757;
+  --claude-orange-dark: #c15f3c;
+  --claude-dark: #141413;
+  --claude-light: #faf9f5;
+  --claude-cream: #f4f3ee;
+  --claude-gray: #b0aea5;
+  --claude-gray-light: #e8e6dc;
+}
+
+/* Typography */
+body,
+.site-title,
+.nav-list,
+.search-input {
+  font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Site title */
+.site-title {
+  font-size: 1rem !important;
+  white-space: nowrap;
+  font-weight: 700;
+  color: var(--claude-dark) !important;
+}
+
+/* Links */
+a, .nav-list .nav-list-item a {
+  color: var(--claude-orange-dark);
+}
+a:hover {
+  color: var(--claude-orange);
+}
+
+/* Sidebar */
+.side-bar {
+  background-color: var(--claude-cream);
+  border-right: 1px solid var(--claude-gray-light);
+}
+
+/* Active nav */
+.nav-list .nav-list-item.active > .nav-list-link {
+  color: var(--claude-orange-dark);
+  font-weight: 700;
+  background-color: rgba(217, 119, 87, 0.08);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--claude-orange) !important;
+  border-color: var(--claude-orange) !important;
+  color: #fff !important;
+  border-radius: 8px;
+}
+.btn-primary:hover {
+  background-color: var(--claude-orange-dark) !important;
+  border-color: var(--claude-orange-dark) !important;
+}
+.btn {
+  border-radius: 8px;
+  border-color: var(--claude-gray-light);
+}
+
+/* Code blocks */
+code {
+  background-color: var(--claude-cream);
+  border: 1px solid var(--claude-gray-light);
+  border-radius: 4px;
+}
+pre code {
+  border: none;
+}
+pre.highlight {
+  background-color: var(--claude-dark) !important;
+  color: #e8e6dc;
+  border-radius: 8px;
+  border: none;
+}
+
+/* Tables */
+th {
+  background-color: var(--claude-cream);
+  border-color: var(--claude-gray-light);
+  font-weight: 700;
+}
+td {
+  border-color: var(--claude-gray-light);
+}
+
+/* Search */
+.search-input {
+  background-color: var(--claude-cream);
+  border: 1px solid var(--claude-gray-light);
+  border-radius: 8px;
+}
+.search-input:focus {
+  border-color: var(--claude-orange);
+  box-shadow: 0 0 0 2px rgba(217, 119, 87, 0.15);
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--claude-gray-light);
+  color: var(--claude-gray);
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  color: var(--claude-dark);
+}
+
+/* Main content area */
+.main-content {
+  background-color: var(--claude-light);
+}
+
+/* Back to top */
+.back-to-top {
+  color: var(--claude-orange-dark);
+}
 </style>
