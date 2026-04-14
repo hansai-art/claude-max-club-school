@@ -68,15 +68,15 @@ Claude MAX 俱樂部學校做的事情很簡單：
 
 ## 讓你的 Claude 自我進化
 
-Claude Code 有一個官方功能 `/insight`，會自動分析你的使用模式，找出重複犯的錯、效率低的習慣、和可以改善的地方。
+Claude Code 有一個官方功能 **/insight**，會自動分析你的使用模式，找出重複犯的錯、效率低的習慣、和可以改善的地方。
 
 **建議流程：**
 
-1. 在 Claude Code 裡輸入 `/insight`
+1. 在 Claude Code 裡輸入 **/insight**
 2. 看看它發現了什麼你沒注意到的問題
 3. 把有用的發現[貢獻上來]({{ site.baseurl }}{% link pages/getting-started.md %})，讓其他人的 Claude 也學到
 
-`/insight` 是挖掘經驗最快的方式，比自己回想踩過什麼坑快多了。
+**/insight** 是挖掘經驗最快的方式，比自己回想踩過什麼坑快多了。
 
 ## 最新貢獻
 
