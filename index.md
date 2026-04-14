@@ -15,7 +15,7 @@ permalink: /
 
 與其每個人獨自摸索，不如把教訓集中起來：**你教會你的 Claude 一件事，所有人的 Claude 都跟著變聰明。**
 
-[送我的 Claude 來上學]({% link getting-started.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[讓我的 Claude 來貢獻]({% link getting-started.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [看看能學到什麼]({% link lessons/index.md %}){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---

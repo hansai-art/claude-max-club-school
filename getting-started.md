@@ -7,54 +7,38 @@ nav_order: 2
 # 開始貢獻
 {: .fs-8 }
 
-三種方式，選最適合你的。
+讓你的 Claude 幫你貢獻，一句話搞定。
 {: .fs-5 .fw-300 }
 
 ---
 
-## 方式一：GitHub 網頁版（零安裝）
+## 推薦方式：讓你的 AI 幫你做
 {: .text-green-300 }
 
-**適合**：不熟 Git 的人、想快速貢獻一篇的人
+你都有 Claude MAX 了，為什麼還要自己手動操作 Git？
 
-### 第 1 步：Fork 這個 Repo
+**直接把下面這段話貼給你的 Claude Code：**
 
-1. 到 [GitHub Repo 頁面](https://github.com/hansai-art/claude-max-club-school)
-2. 點右上角的 **Fork** 按鈕
-3. 保持預設設定，點 **Create fork**
+````
+幫我貢獻一篇經驗到 claude-max-club-school：
 
-### 第 2 步：建立你的資料夾
+1. fork https://github.com/hansai-art/claude-max-club-school
+2. 在 contributors/ 下建立我的資料夾（用我的 GitHub username）
+3. 參考 contributors/_template/ 的格式，建立 index.md（個人簡介）和一篇經驗文章
+4. 經驗主題：（這裡填你想分享的踩坑經驗）
+5. push 後幫我發 PR
+````
 
-1. 在你 fork 的 repo 裡，進入 `contributors/` 資料夾
-2. 點 **Add file** → **Create new file**
-3. 在檔名欄位輸入 `你的GitHub帳號/index.md`（例如 `johndoe/index.md`）
-4. 這會自動建立資料夾
+**就這樣。** 你的 Claude 會自動 fork、建資料夾、寫文章、發 PR。你只需要：
+1. 告訴它你踩過什麼坑
+2. Review 它幫你寫的內容
+3. 確認發 PR
 
-### 第 3 步：寫你的個人簡介
-
-把以下內容貼進 `index.md`，改成你的資料：
-
-```markdown
----
-layout: default
-title: 你的GitHub帳號
-parent: 貢獻者
-has_children: true
 ---
 
-# 你的名字
+## 經驗文章長什麼樣？
 
-簡單介紹自己，例如：
-- 用 Claude Code 多久了
-- 主要用來做什麼
-- 踩過最深的坑是什麼
-```
-
-### 第 4 步：寫你的第一篇經驗
-
-1. 在你的資料夾裡，點 **Add file** → **Create new file**
-2. 檔名格式：`001-簡短描述.md`（例如 `001-dont-use-write.md`）
-3. 用以下範本：
+每篇文章只需要四個區塊：
 
 ```markdown
 ---
@@ -80,51 +64,32 @@ grand_parent: 貢獻者
 （可以直接複製的規則）
 ```
 
-### 第 5 步：發 Pull Request
-
-1. 回到你 fork 的 repo 首頁
-2. 會看到提示 "This branch is X commits ahead"
-3. 點 **Contribute** → **Open pull request**
-4. 填寫標題和說明，點 **Create pull request**
-5. 等待 review 後 merge！
+你不需要記住這個格式。你的 Claude 會自動參考 `_template/` 裡的範本。
 
 ---
 
-## 方式二：本機操作
-{: .text-blue-300 }
+## 其他方式
 
-**適合**：熟悉 Git 的開發者
+如果你比較習慣手動操作，也可以：
+
+### GitHub 網頁版
+
+1. 到 [Repo 頁面](https://github.com/hansai-art/claude-max-club-school) 點 **Fork**
+2. 在 `contributors/` 下建立 `你的帳號/index.md`
+3. 寫文章，發 PR
+
+### 本機 Git
 
 ```bash
-# 1. Fork 後 clone
 git clone https://github.com/你的帳號/claude-max-club-school.git
 cd claude-max-club-school
-
-# 2. 建立你的資料夾（從範本複製）
 cp -r contributors/_template contributors/你的帳號
-
-# 3. 編輯檔案
-#    - contributors/你的帳號/index.md  （個人簡介）
-#    - contributors/你的帳號/001-xxx.md （經驗文章）
-
-# 4. Push 並發 PR
+# 編輯檔案後
 git add contributors/你的帳號/
 git commit -m "feat: add lessons from 你的帳號"
 git push origin main
-# 到 GitHub 網頁發 Pull Request
+# 到 GitHub 發 PR
 ```
-
----
-
-## 方式三：開 Issue（最低門檻）
-{: .text-yellow-300 }
-
-**適合**：完全不想碰 Git 的人
-
-1. 到 [Issues 頁面](https://github.com/hansai-art/claude-max-club-school/issues/new/choose)
-2. 選 **分享新經驗**
-3. 填寫表單
-4. 維護者會幫你建檔案並 merge
 
 ---
 

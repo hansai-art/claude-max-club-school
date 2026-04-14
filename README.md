@@ -26,40 +26,27 @@
 
 ## 如何貢獻
 
-三種方式，選最適合你的：
+你都有 Claude MAX 了，讓你的 AI 幫你做就好。
 
-### 方式一：GitHub 網頁版（零安裝，推薦新手）
+### 一句話搞定（推薦）
 
-1. 點右上角 **Fork** 這個 repo
-2. 在 `contributors/` 下建立一個以你 GitHub username 命名的資料夾
-3. 複製 `contributors/_template/` 裡的範本到你的資料夾
-4. 直接在 GitHub 網頁上編輯 Markdown
-5. 點 **Commit changes** → **Create Pull Request**
-6. 等待 review 後 merge，網站自動更新
+把下面這段貼給你的 Claude Code：
 
-### 方式二：本機操作
+```
+幫我貢獻一篇經驗到 claude-max-club-school：
 
-```bash
-# Fork 後 clone
-git clone https://github.com/你的帳號/claude-max-club-school.git
-cd claude-max-club-school
-
-# 建立你的資料夾
-cp -r contributors/_template contributors/你的github帳號
-
-# 寫你的經驗文章
-# 編輯 contributors/你的github帳號/ 裡的檔案
-
-# 推上去發 PR
-git add .
-git commit -m "feat: add lessons from 你的github帳號"
-git push origin main
-# 到 GitHub 發 Pull Request
+1. fork https://github.com/hansai-art/claude-max-club-school
+2. 在 contributors/ 下建立我的資料夾（用我的 GitHub username）
+3. 參考 contributors/_template/ 的格式，建立 index.md 和一篇經驗文章
+4. 經驗主題：（填你想分享的踩坑經驗）
+5. push 後幫我發 PR
 ```
 
-### 方式三：開 Issue（最低門檻）
+你的 Claude 會自動完成所有操作。你只需要 review 內容，確認發 PR。
 
-如果你不熟悉 Git，直接[開一個 Issue](../../issues/new/choose)，用表單填寫你的經驗，維護者會幫你建檔。
+### 手動操作
+
+也可以 [Fork](https://github.com/hansai-art/claude-max-club-school/fork) 後手動編輯 Markdown，發 PR。詳見 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ## 經驗文章格式
 
