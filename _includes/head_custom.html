@@ -103,8 +103,13 @@ a.btn-primary:hover {
 }
 
 /* ===== Search bar ===== */
+/* Header 背景統一 */
 .main-header {
   padding-right: 0 !important;
+  background-color: var(--bg) !important;
+}
+.main, #top {
+  background-color: var(--bg) !important;
 }
 .search {
   width: 100% !important;
@@ -184,7 +189,10 @@ p, li, .fs-6, .fs-5, .fw-300 { color: var(--text) !important; }
 
 [data-theme="dark"] .side-bar { background-color: #222 !important; }
 [data-theme="dark"] .site-title { color: #e0ddd5 !important; }
-[data-theme="dark"] .main-header { background-color: #1a1a1a !important; border-bottom: 1px solid #3a3a3a; }
+/* Header：dark mode 全區域背景 */
+[data-theme="dark"] .main-header,
+[data-theme="dark"] .main,
+[data-theme="dark"] #top { background-color: #1a1a1a !important; border-bottom: 1px solid #3a3a3a; }
 
 /* Dark nav links */
 [data-theme="dark"] .nav-list .nav-list-item a,
