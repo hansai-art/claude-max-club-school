@@ -20,18 +20,21 @@ nav_order: 2
 **直接把下面這段話貼給你的 Claude Code：**
 
 ````
-幫我貢獻一篇經驗到 claude-max-club-school：
+幫我貢獻經驗到 claude-max-club-school：
 
 1. fork https://github.com/hansai-art/claude-max-club-school
 2. 在 contributors/ 下建立我的資料夾（用我的 GitHub username）
-3. 參考 contributors/_template/ 的格式，建立 index.md（個人簡介）和一篇經驗文章
-4. 經驗主題：（這裡填你想分享的踩坑經驗）
-5. push 後幫我發 PR
+3. 參考 contributors/_template/ 的格式，建立 index.md（個人簡介）
+4. 讀取我的 ~/.claude/CLAUDE.md 和 memory 裡的 feedback 記錄，把所有踩坑經驗都整理成文章，越多篇越好
+5. 每篇文章都要附上「可複用的 CLAUDE.md 規則」
+6. push 後幫我發 PR
 ````
 
-**就這樣。** 你的 Claude 會自動 fork、建資料夾、寫文章、發 PR。你只需要：
-1. 告訴它你踩過什麼坑
-2. Review 它幫你寫的內容
+**你的 Claude 會自動掃描你的 CLAUDE.md 和 memory，把你累積的所有教訓都整理成文章。** 你教過 Claude 的每一條規則，都是別人能受益的經驗。貢獻越多篇越好。
+
+你只需要：
+1. 貼上面那段話
+2. Review 它幫你整理的內容
 3. 確認發 PR
 
 ---
