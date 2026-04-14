@@ -1,0 +1,12 @@
+# 貢獻者索引（機器可讀）
+# AI 讀這個檔案就能快速篩選相關貢獻者，不需要逐一打開每個人的 index.md
+# 新貢獻者請在 PR 裡同步更新這個檔案
+
+- username: hanslin
+  name: Hans Lin
+  role: 獨立開發者 / 技術內容創作者
+  work: 經營技術部落格、開發備考工具
+  stack: [WordPress, Lovable, Supabase, Astro, React, TypeScript]
+  uses_claude_for: [文章撰寫, 全端開發, 自動化腳本, SEO 優化, WordPress 管理]
+  lessons: 3
+  topics: [token效率, 診斷流程, 自動化除錯]
