@@ -5,6 +5,7 @@ remote_theme: just-the-docs/just-the-docs@v0.10.1
 url: "https://hansai-art.github.io"
 baseurl: "/claude-max-club-school"
 lang: zh-TW
+permalink: pretty
 
 # SEO
 plugins:
@@ -27,7 +28,7 @@ search.heading_level: 3
 nav_sort: case_sensitive
 
 # 外觀
-color_scheme: claude
+color_scheme: default
 
 # 排除不需要渲染的檔案
 exclude:
