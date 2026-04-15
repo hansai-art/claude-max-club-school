@@ -35,3 +35,10 @@ has_children: true
 ### Spectra SDD 流程
 - [每個任務強制三步：對齊→記錄→執行](009-three-step-task-discipline.md)：防止方向錯誤和無法追蹤
 - [所有開發任務必須建立 Spectra Change](010-spectra-for-all-tasks.md)：SDD Loop 無例外，不允許只存在對話紀錄
+
+### 高頻摩擦模式（來自 168 session 使用數據）
+- [猜設定路徑浪費整個 session](011-guess-wrong-config-paths.md)：先讀實際檔案再動手，不憑記憶猜
+- [幽靈進度：說完成但變更沒有持久化](012-phantom-progress-reporting.md)：git status + push 確認才算完
+- [違反委派規則：自己動手而不外包給 Agent](013-delegation-bypass.md)：強制停頓檢查點，外顯路由判斷
+- [能自己做的事，不要丟給用戶手動處理](014-do-it-yourself-not-user.md)：gh/git/CLI 能做的就自己做
+- [解釋太技術性，用戶說「我看不懂」](015-over-technical-explanations.md)：預設白話文，技術細節按需給

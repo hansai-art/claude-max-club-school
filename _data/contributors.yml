@@ -17,5 +17,5 @@
   work: 開發 BuyGo 電商管理系統（WordPress 外掛 SaaS）
   stack: [WordPress, PHP, Next.js, Supabase, Claude Code, 多模型協作框架]
   uses_claude_for: [外掛開發, 多模型Agent協作, 自動化腳本, SDD規格驅動開發, 系統架構設計]
-  lessons: 10
-  topics: [工具降級策略, 任務回報流程, debug方法論, 推測標注, 操作確認, 代碼外包, 自動化原則, SDD流程, Spectra工作流, 多模型路由]
+  lessons: 15
+  topics: [工具降級策略, 任務回報流程, debug方法論, 推測標注, 操作確認, 代碼外包, 自動化原則, SDD流程, Spectra工作流, 多模型路由, 設定路徑驗證, 幽靈進度防範, 委派強制執行, 用戶介入邊界, 解釋語言層級]
