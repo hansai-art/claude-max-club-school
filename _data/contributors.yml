@@ -10,3 +10,12 @@
   uses_claude_for: [文章撰寫, 全端開發, 自動化腳本, SEO 優化, WordPress 管理, 靜態網站建置]
   lessons: 25
   topics: [token效率, 診斷流程, 自動化除錯, 覆蓋風險, 驗證流程, 資料庫操作, 平行操作, CSS對比度, Jekyll配置, 前端除錯]
+
+- username: fishtvlvoe
+  name: Fish（老魚）
+  role: 一人公司 / 獨立開發者
+  work: 開發 BuyGo 電商管理系統（WordPress 外掛 SaaS）
+  stack: [WordPress, PHP, Next.js, Supabase, Claude Code, 多模型協作框架]
+  uses_claude_for: [外掛開發, 多模型Agent協作, 自動化腳本, SDD規格驅動開發, 系統架構設計]
+  lessons: 10
+  topics: [工具降級策略, 任務回報流程, debug方法論, 推測標注, 操作確認, 代碼外包, 自動化原則, SDD流程, Spectra工作流, 多模型路由]
