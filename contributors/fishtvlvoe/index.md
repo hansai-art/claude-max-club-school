@@ -42,3 +42,33 @@ has_children: true
 - [違反委派規則：自己動手而不外包給 Agent](013-delegation-bypass.md)：強制停頓檢查點，外顯路由判斷
 - [能自己做的事，不要丟給用戶手動處理](014-do-it-yourself-not-user.md)：gh/git/CLI 能做的就自己做
 - [解釋太技術性，用戶說「我看不懂」](015-over-technical-explanations.md)：預設白話文，技術細節按需給
+
+### CLI 優先原則
+- [Supabase 操作一律用 CLI，不開瀏覽器](016-supabase-cli-only.md)
+- [Vercel 操作一律用 CLI，不開瀏覽器](018-vercel-cli-only.md)
+
+### CSS 與前端
+- [UI 按鈕禁用 Emoji，一律用 SVG Icon](017-svg-icons-not-emoji.md)
+- [CSS 改動後必須線上驗證，改兩次沒好就停止診斷](019-css-online-verify.md)
+- [覆蓋漸層元素必須同時清除 background-image 和 box-shadow](020-gradient-override.md)
+- [UI commit 前必須截圖驗證每個畫面狀態](029-ui-screenshot-verify.md)
+- [Next.js dev server 手機測試的 CORS 問題](030-nextjs-dev-cors.md)
+- [iOS Safari 在 HTTP 環境下的靜默失敗](031-ios-safari-http.md)
+
+### 效率與自動化進階
+- [大檔案讀取：用 Grep 定位再 offset 讀取](021-efficient-file-reading.md)
+- [自動化腳本失敗後先記錄實際狀態，才決定重試](022-automation-debug-log.md)
+
+### Debug 進階
+- [Debug 403/500 前必須先看 server access log](027-debug-server-log-first.md)
+
+### 部署
+- [rsync 部署完整 SOP：連線測試、chmod 修正權限](026-rsync-deploy-sop.md)
+
+### 平台與整合
+- [擴展點名稱必須查文件，不猜檔名](023-verify-extension-names.md)
+- [建立 Repo 的正確初始化順序](024-repo-init-order.md)
+- [加平台設定前先確認目標版本和限制](025-platform-version-check.md)
+
+### React
+- [React hook callback 的閉包陷阱：靜默失敗無錯誤](028-react-hook-closure.md)
