@@ -6,7 +6,7 @@ grand_parent: 貢獻者
 tags: [資料庫, 診斷不足]
 date: 2026-05-04
 still_relevant: true
-permalink: /contributors/fishtvlvoe/015-postgres-alter-not-create/
+permalink: /contributors/fishtvlvoe/034-postgres-alter-not-create/
 ---
 
 # Postgres schema 演進用 ALTER TABLE，CREATE TABLE IF NOT EXISTS 是 no-op

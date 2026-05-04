@@ -6,7 +6,7 @@ grand_parent: 貢獻者
 tags: [診斷不足, CLAUDE.md規則]
 date: 2026-05-04
 still_relevant: true
-permalink: /contributors/fishtvlvoe/001-verify-tool-availability/
+permalink: /contributors/fishtvlvoe/032-verify-tool-availability/
 ---
 
 # 說「工具不能用」前先 `which X` 確認

@@ -6,7 +6,7 @@ grand_parent: 貢獻者
 tags: [DevOps, 診斷不足]
 date: 2026-05-04
 still_relevant: true
-permalink: /contributors/fishtvlvoe/014-vercel-env-printf-not-echo/
+permalink: /contributors/fishtvlvoe/033-vercel-env-printf-not-echo/
 ---
 
 # Vercel env add 禁用 echo，用 printf 避免隱形 `\n`
