@@ -87,3 +87,15 @@ has_children: true
 
 ### 前端開發環境（本週新增）
 - [中文路徑讓 Vite/Next.js Dev Server 白畫面](036-non-ascii-path-dev-server.md)：@fs URL 被 encode，symlink 也救不了，要實體 mv 到 ASCII 路徑
+
+### 任務管理與存檔（2026-05-18 新增）
+- [長任務一定要建 WIP 存檔點](037-wip-commit-checkpoint.md)：對話 history 不是 git，超過 3 個子步驟的任務每步都要 commit
+- [Build 通過不等於功能正確](038-build-pass-not-enough.md)：build 只驗靜態型別，行為驗證必須自己跑，禁止說「你試跑一下確認」
+
+### UI 開發（2026-05-18 新增）
+- [分析 UI 結構要讀 DOM，不要截圖](039-dom-over-screenshot.md)：截圖 1500 tokens 換模糊推測，DOM computed style 給精確數值
+
+### 代碼品質（2026-05-18 新增）
+- [寫代碼前先做 cross-impact 分析](040-cross-impact-analysis.md)：改 A 不壞 B，先 grep 所有 caller，REST API 要從前端往後 trace
+- [程式碼風格衝突時必須明確選邊站](041-style-conflict-pick-one.md)：禁止兩種都保留，查設定→數多數→無法決定就問用戶
+- [Agent tool call XML 參數值不能夾雜描述文字](042-xml-param-no-description.md)：文字夾進 &lt;parameter&gt; 標籤間會被 parser 吞進前一個參數值，導致靜默失敗
