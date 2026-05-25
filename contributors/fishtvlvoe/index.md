@@ -99,3 +99,7 @@ has_children: true
 - [寫代碼前先做 cross-impact 分析](040-cross-impact-analysis.md)：改 A 不壞 B，先 grep 所有 caller，REST API 要從前端往後 trace
 - [程式碼風格衝突時必須明確選邊站](041-style-conflict-pick-one.md)：禁止兩種都保留，查設定→數多數→無法決定就問用戶
 - [Agent tool call XML 參數值不能夾雜描述文字](042-xml-param-no-description.md)：文字夾進 &lt;parameter&gt; 標籤間會被 parser 吞進前一個參數值，導致靜默失敗
+
+### 代碼效率與環境（2026-05-25 新增）
+- [先搜尋現有實作再動手，不要重複造輪子](043-reuse-first.md)：寫代碼前先 grep codebase，有的直接用，禁止從頭寫已存在的東西
+- [需要 API Key 先查 .env，不要問用戶](044-check-env-first.md)：金鑰在 .env 裡，查了再說，找不到才開口
